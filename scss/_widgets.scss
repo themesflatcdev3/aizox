@@ -55,8 +55,109 @@
     }
 }
 
+.counters-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--Line);
+    .icon {
+        font-size: 24px;
+        color: var(--Primary);
+    }
+}
 
+.banner-box {
+    display: grid;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 8px;
+    background: linear-gradient(253.69deg, #182D33 -0.92%, #382944 100%);
+}
 
+.user-tools-wrap {
+    padding: 40px;
+    .user-tools-item {
+        max-width: 640px;
+    }
+}
+
+.user-tools-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px;
+    border-radius: 32px;
+    background-color: var(--Surface);
+    border: 2px solid var(--Line);
+    @include transition3;
+    .icon {
+        font-size: 32px;
+    }
+    &:hover {
+        background-color: var(--DarkSurface)
+    }
+}
+
+.dropdown-default {
+    .dropdown-toggle {
+        &::after {
+            display: none;
+        }
+    }
+    .dropdown-menu {
+        width: 200px;
+        background-color: var(--DarkSurface);
+        border-radius: 12px;
+        border: 1px solid var(--Line);
+        padding: 11px;
+        .dropdown-item {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--OnSurface);
+            padding: 8px 12px;
+            border-radius: 8px;
+            @include transition3;
+            &:hover {
+                background-color: var(--Surface)
+            }
+        }
+    }
+}
+
+.list-icon-function {
+    display: flex;
+    gap: 20px;
+    .item-icon {
+        font-size: 28px;
+        color: var(--Secondary);
+        display: flex;
+        cursor: pointer;
+    }
+    .favourite {
+        .icon-Star {
+            display: none;
+        }
+        &.active {
+            color: var(--Yellow);
+            .icon-Star {
+                display: block;
+            }
+            .icon-Star-fill {
+                display: none;
+            }
+        }
+    }
+    &.type-small {
+        gap: 8px;
+        .item-icon {
+            font-size: 20px;
+        }
+    }
+}
 
 
 

@@ -777,6 +777,9 @@ h6,.h6 {
 .mb-30 {
     margin-bottom: 30px !important;
 }
+.mb-32 {
+    margin-bottom: 32px !important;
+}
 .mb-40 {
     margin-bottom: 40px !important;
 }
@@ -888,6 +891,10 @@ h6,.h6 {
     height: 152px !important;
 }
 
+.radius-12 {
+    border-radius: 12px;
+}
+
 .link {
     @include transition3;
     cursor: pointer;
@@ -916,10 +923,10 @@ h6,.h6 {
 -------------------------------------------------------------- */
 a {
     text-decoration   : none;
-    color             : var(--Main-Dark);
+    color             : var(--OnSurface);
     @include transition3;
     &:hover {
-        color             : var(--Main);
+        color             : var(--Primary);
         text-decoration   : none;
         outline           : 0;
         @include transition3;

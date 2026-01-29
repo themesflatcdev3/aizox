@@ -156,7 +156,7 @@
                 transform: rotate(180deg);
             }
             .box-logo {
-                background-color: #fff;
+                background-color: var(--DarkSurface);
                 border-color: #fff;
                 left: -100%;
             }
@@ -225,6 +225,19 @@
 }
 
 @media (max-width: 767px) {
+    .main-content-wrap {
+        flex-direction: column;
+    }
+    .user-tools-wrap {
+        padding: 24px 15px;
+    }
+    .sidebar-right {
+        width: 100%;
+        border-top: 1px solid var(--Line);
+        border-left: 0;
+        padding: 28px 15px;
+    }
+
     .offcanvas-body form .radio-buttons .item {
         input {
             left: 5px;

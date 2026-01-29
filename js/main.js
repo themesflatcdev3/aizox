@@ -119,36 +119,10 @@
           $(this).parents(".item-row").remove();
         }
       });
-      
+      $(".list-icon-function .favourite").click(function () {
+          $(this).toggleClass("active");
+      });
     }
-  }
-
-  var box_search=function(){
-        
-    $(document).on('click',function(e){
-      var clickID=e.target.id;if((clickID!=='s')){
-          $('.box-content-search').removeClass('active');
-      }});
-    $(document).on('click',function(e){
-        var clickID=e.target.class;if((clickID!=='a111')){
-            $('.show-search').removeClass('active');
-    }});
-        
-    $('.show-search').on('click',function(event){
-      event.stopPropagation();}
-    );
-    $('.search-form').on('click',function(event){
-      event.stopPropagation();}
-    );
-    var input =  $('.header-dashboard').find('.form-search').find('input');
-    input.on('input', function() {
-      if ($(this).val().trim() !== '') {
-        $('.box-content-search').addClass('active');
-      } else {
-        $('.box-content-search').removeClass('active');
-      }
-    });
-   
   }
 
   var variant_picker = function () {
@@ -242,6 +216,43 @@
 
   }
 
+  var handleMessage = function () {
+    $(".btn-message").on("click", function () {
+      var ipMessage = $(".val-message");
+      var messValue = ipMessage.val().trim();
+      var $chat = $(".content-chat");
+    
+      if (!messValue.length) return;
+    
+      var domMessage =
+        '<div class="bubble bubble-me">' +
+          '<div class="avatar">' +
+            '<img src="images/avatar/user-1.png" alt="">' +
+          '</div>' +
+          '<div class="content body-text-2">' +
+            messValue +
+          '</div>' +
+        '</div>';
+    
+      $chat.append(domMessage);
+    
+      $chat.stop().animate(
+        { scrollTop: $chat[0].scrollHeight },
+        300
+      );
+    
+      ipMessage.val("");
+    });
+
+    if ($(".content-chat").length > 0) {
+      var $chat = $(".content-chat");
+      $chat.animate(
+        { scrollTop: $chat[0].scrollHeight },
+        300
+      );
+    }
+  };
+
   // Dom Ready
   $(function () {
     selectImages();
@@ -251,11 +262,11 @@
     showpass();
     select_colors_theme();
     icon_function();
-    box_search();
     variant_picker();
     uploadfile();
     writeReview();
     multiselect();
+    handleMessage();
   });
 
 })(jQuery);
