@@ -86,6 +86,12 @@
     $(".button-show-hide").on("click", function () {
       $('.layout-wrap').toggleClass('full-width');
     })
+    $(".sidebar-close").on("click", function () {
+      $('.sidebar-right').toggleClass('active');
+    })
+    $(".btn-dropdown-cate").on("click", function () {
+      $('.form-question-ai').toggleClass('active');
+    })
   }
 
   var showpass = function() {

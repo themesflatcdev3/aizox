@@ -159,6 +159,57 @@
     }
 }
 
+.chat-history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 11px 15px;
+    border: 1px solid var(--Line);
+    background-color: var(--Surface);
+    border-radius: 12px;
+    @include transition3;
+    cursor: pointer;
+    &.active,
+    &:hover {
+        background-color: var(--DarkSurface);
+    }
+    &:hover {
+        .list-icon-function {
+            .item-icon {
+                display: flex;
+            }
+        }
+    }
+    .title {
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+    .list-icon-function {
+        .item-icon {
+            @include transition3;
+            display: none;
+            &.active {
+                display: flex;
+            }
+        }
+    }
+    .text {
+        color: var(--Secondary);
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+}
+
+
+
+
+
+
 
 
 
