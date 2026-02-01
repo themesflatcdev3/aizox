@@ -223,7 +223,7 @@
   }
 
   var handleMessage = function () {
-    $(".btn-message").on("click", function () {
+    $(".btn-send-mess").on("click", function () {
       var ipMessage = $(".val-message");
       var messValue = ipMessage.val().trim();
       var $chat = $(".content-chat");
