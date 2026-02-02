@@ -243,6 +243,43 @@
 }
 
 
+.uploadfile {
+    text-align: center;
+    width: 100%;
+    height: 152px;
+    position: relative;
+    border: 1px dashed var(--Primary);
+    background-color: var(--DarkSurface);
+    border-radius: 8px;
+    cursor: pointer;
+    @include flex(center,center);
+    gap: 8px;
+    flex-direction: column;
+    .icon {
+        font-size: 44px;
+        color: var(--OnSurface);
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        object-fit: cover;
+        &.has-img {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
 
 
 

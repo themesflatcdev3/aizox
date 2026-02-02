@@ -255,6 +255,27 @@
 }
 
 @media (max-width: 767px) {
+    .image-item .image-action {
+        right: 15px;
+        left: 15px;
+        top: 15px;
+        a {
+            width: 32px;
+            height: 32px;
+            font-size: 20px;
+        }
+    }
+    .grid-image {
+        &.style-1 {
+            flex-direction: column;
+            >* {
+                width: 100% !important;
+            }
+        }
+    }
+    .text-to-image-wrap {
+        padding: 15px;
+    }
     .question-result-wrap {
         .heading {
             padding: 15px;

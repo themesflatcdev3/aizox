@@ -63,6 +63,17 @@
         background-color: var(--Surface);
         transform: rotate(-90deg);
     }
+    .sidebar-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
 }
 
 .chat-bot-wrap {
@@ -167,18 +178,6 @@
             background-color: transparent;
             color: var(--Primary);
         }
-    }
-}
-
-.history-wrap {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    overflow-y: auto;
-    &::-webkit-scrollbar {
-        width: 0px;
     }
 }
 
@@ -396,6 +395,125 @@
     background-color: var(--DarkSurface);
     box-shadow: 0px 4px 4px 0px rgba(51, 28, 35, 0.08);
 }
+
+.text-to-image-wrap {
+    padding: 40px;
+    .grid-image {
+        margin-bottom: 26px;
+    }
+    .text-to-image-content {
+        max-width: 1002px;
+    }
+}
+
+.result-action {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    a {
+        font-size: 28px;
+        color: var(--Secondary);
+        &:hover {
+            color: var(--OnSurface);
+        }
+    }
+}
+
+.image-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    .image-action {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: end;
+        gap: 8px;
+        z-index: 1;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #0E0E1466;
+            border-radius: 8px;
+            font-size: 24px;
+            color: var(--OnSurface);
+            opacity: 0;
+            visibility: hidden;
+            &:hover {
+                background-color: var(--DarkSurface);
+            }
+        }
+    }
+    &:hover {
+        .image-action a {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.grid-image {
+    display: flex;
+    gap: 24px;
+    &.style-1 {
+        .left {
+            width: 65.868%;
+        }
+        .right {
+            width: 31.736%;
+        }
+    }
+}
+
+.list-choose {
+    display: flex;
+    gap: 8px;
+    .choose-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 63px;
+        height: 44px;
+        border-radius: 8px;
+        background-color: var(--DarkSurface);
+        border: 1px solid var(--Line);
+        @include transition3;
+        cursor: pointer;
+        &.active {
+            color: var(--DarkSurface);
+            background-color: var(--Primary);
+            border-color: var(--Primary);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
