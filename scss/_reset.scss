@@ -487,10 +487,6 @@ input[type="submit"] {
 input[type="checkbox"],
 input[type="radio"] {
     padding : 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0) !important;
     cursor : pointer;
     vertical-align: sub;
     /* Addresses excess padding in IE8/9 */

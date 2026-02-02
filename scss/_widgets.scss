@@ -280,6 +280,37 @@
     }
 }
 
+.tf-switch-check {
+    position: relative;
+    width: 68px;
+    height: 36px;
+    -webkit-appearance: none;
+    background-color: var(--Secondary);
+    border-radius: 99px;
+    transition: 0.3s;
+    &::before {
+        content: "";
+        border-radius: 99px;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        background: var(--OnSurface);
+        transition: 0.2s;
+    }
+    &:checked {
+        background-color: var(--Primary);
+        &::before {
+            left: 36px;
+        }
+    }
+}
+
+
+
+
+
 
 
 
