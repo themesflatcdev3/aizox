@@ -1,548 +1,473 @@
-<!doctype html>
-<html lang="vi">
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Custom Video Player</title>
-  <style>
-    :root{
-      --bg: rgba(0,0,0,.45);
-      --bg2: rgba(0,0,0,.55);
-      --line: rgba(255,255,255,.18);
-      --text: #fff;
-      --muted: rgba(255,255,255,.75);
-      --thumb: #fff;
-      --accent: #ffffff;
-    }
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>AIZOX Dashboard Image Generation & Chat Bot HTML Template</title>
+    <meta name="author" content="themesflat.com">
 
-    body{
-      margin:0;
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      background:#0b1020;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      padding:24px;
-      color:var(--text);
-    }
+    <meta name="description" content="Dataflow – Admin Dashboard HTML Template is a modern, clean, and highly flexible dashboard designed for admin panels, SaaS products, and data-driven web applications. Built with HTML5, CSS3, JavaScript, and jQuery, it focuses on performance, clarity, and ease of customization. The template features a fully responsive layout that works seamlessly across all devices and browsers. Dataflow integrates ApexCharts to deliver clear and interactive data visualizations, including bar, line, and radial charts. With well-structured code and reusable components, it is easy to extend and adapt for CRM systems, analytics platforms, and back-office management tools.">
 
-    /* Wrapper như ảnh */
-    .player{
-      width:min(980px, 100%);
-      aspect-ratio: 16/9;
-      border-radius:14px;
-      overflow:hidden;
-      position:relative;
-      background:#000;
-      box-shadow: 0 20px 60px rgba(0,0,0,.45);
-      user-select:none;
-    }
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    .player video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      background:#000;
-    }
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    /* lớp phủ nhẹ */
-    .player::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background: linear-gradient(to bottom, rgba(0,0,0,.12), rgba(0,0,0,.25));
-      opacity:1;
-    }
 
-    /* Big Play button giữa */
-    .big-play{
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-items:center;
-      z-index:3;
-      pointer-events:none; /* bật/tắt bằng JS */
-    }
-    .big-play button{
-      pointer-events:auto;
-      width:92px;
-      height:92px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      transition: transform .15s ease, background .15s ease;
-    }
-    .big-play button:hover{ transform: scale(1.04); background: rgba(0,0,0,.45); }
-    .big-play svg{ width:34px; height:34px; fill:#fff; margin-left:3px; }
 
-    /* Controls bar */
-    .controls{
-      position:absolute;
-      left:14px;
-      right:14px;
-      bottom:14px;
-      z-index:4;
-      background: var(--bg);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:10px 10px 8px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
+    <!-- Font -->
+    <link rel="stylesheet" href="font/fonts.css">
 
-    .row{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+    <!-- Icon -->
+    <link rel="stylesheet" href="icon/style.css">
 
-    .btn{
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(0,0,0,.25);
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      transition: background .15s ease, transform .15s ease;
-    }
-    .btn:hover{ background: rgba(0,0,0,.38); }
-    .btn:active{ transform: scale(.98); }
-    .btn svg{ width:18px; height:18px; fill:#fff; opacity:.95; }
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
 
-    .time{
-      font-size:13px;
-      color:var(--muted);
-      min-width:92px;
-      text-align:center;
-      white-space:nowrap;
-    }
-
-    /* Progress */
-    .progress-wrap{
-      flex:1;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .progress{
-      position:relative;
-      flex:1;
-      height:8px;
-      border-radius:999px;
-      background: rgba(255,255,255,.18);
-      cursor:pointer;
-      overflow:hidden;
-    }
-    .progress .fill{
-      position:absolute;
-      left:0; top:0; bottom:0;
-      width:0%;
-      background: rgba(255,255,255,.92);
-    }
-    .progress .buffer{
-      position:absolute;
-      left:0; top:0; bottom:0;
-      width:0%;
-      background: rgba(255,255,255,.35);
-    }
-    .progress .thumb{
-      position:absolute;
-      top:50%;
-      transform: translate(-50%,-50%);
-      left:0%;
-      width:14px;
-      height:14px;
-      border-radius:999px;
-      background: var(--thumb);
-      box-shadow: 0 4px 12px rgba(0,0,0,.25);
-      pointer-events:none;
-    }
-
-    /* Volume slider */
-    .vol{
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-    input[type="range"]{
-      -webkit-appearance:none;
-      appearance:none;
-      width:92px;
-      height:6px;
-      border-radius:999px;
-      background: rgba(255,255,255,.18);
-      outline:none;
-      cursor:pointer;
-    }
-    input[type="range"]::-webkit-slider-thumb{
-      -webkit-appearance:none;
-      appearance:none;
-      width:14px;height:14px;border-radius:999px;
-      background:#fff;
-      border:none;
-      box-shadow: 0 4px 12px rgba(0,0,0,.25);
-    }
-    input[type="range"]::-moz-range-thumb{
-      width:14px;height:14px;border-radius:999px;
-      background:#fff;border:none;
-      box-shadow: 0 4px 12px rgba(0,0,0,.25);
-    }
-
-    /* Hidden native controls */
-    video::-webkit-media-controls { display:none !important; }
-
-    /* Khi pause thì hiện big play */
-    .player.is-paused .big-play{ opacity:1; }
-    .player.is-playing .big-play{ opacity:0; pointer-events:none; }
-
-    /* Optional: click vào video để play/pause */
-    .click-layer{
-      position:absolute;
-      inset:0;
-      z-index:2;
-      cursor:pointer;
-      background: transparent;
-    }
-
-    /* Fullscreen tweak */
-    .player:fullscreen .controls{
-      left:18px; right:18px; bottom:18px;
-    }
-  </style>
 </head>
+
 <body>
 
-  <div class="player is-paused" id="player">
-    <video id="video" preload="metadata" playsinline >
-      <!-- THAY LINK VIDEO Ở ĐÂY -->
-      <source src="images/video/video-1.mp4" type="video/mp4">
-    </video>
+    <!-- #wrapper -->
+    <div id="wrapper">
+        <!-- #page -->
+        <div id="page" class="">
+            <!-- layout-wrap -->
+            <div class="layout-wrap">
+                <!-- section-menu-left -->
+                <div class="overplay-menu d-lg-none"></div>
+                <div class="section-menu-left">
+                    <div class="box-logo">
+                        <a href="index.html" id="site-logo-inner">
+                            <img class="" id="logo_header" alt="image" src="images/logo/logo.svg" data-light="images/logo/logo.svg" data-dark="images/logo/logo-white.svg" >
+                        </a>
+                        <div class="button-show-hide">
+                            <i class="icon-CaretLeft"></i>
+                        </div>
+                    </div>
+                    <div class="section-menu-left-wrap">
+                        <div class="center">
+                            <form class="form-search">
+                                <fieldset class="name">
+                                    <input type="text" placeholder="Search" class="input-search" name="name" tabindex="2" value="" required="">
+                                </fieldset>
+                                <div class="button-submit">
+                                    <button class="" type="submit"><i class="icon-search"></i></button>
+                                </div>
+                            </form>
+                            <div class="center-item">
+                                <div class="center-heading">Dashboard</div>
+                                <ul>
+                                    <li class="menu-item">
+                                        <a href="index.html" class="">
+                                            <div class="icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_8008_16325)">
+                                                    <path d="M20.25 20.2504V10.8322C20.25 10.7277 20.2281 10.6243 20.1858 10.5288C20.1435 10.4332 20.0817 10.3475 20.0044 10.2772L12.5044 3.19535C12.3663 3.06966 12.1863 3 11.9995 3C11.8128 3 11.6328 3.06966 11.4947 3.19535L3.99469 10.2772C3.91751 10.3476 3.85587 10.4333 3.81374 10.5289C3.7716 10.6245 3.74989 10.7278 3.75 10.8322V20.2504" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M1.5 20.25H22.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M14.25 20.25V15C14.25 14.8011 14.171 14.6103 14.0303 14.4697C13.8897 14.329 13.6989 14.25 13.5 14.25H10.5C10.3011 14.25 10.1103 14.329 9.96967 14.4697C9.82902 14.6103 9.75 14.8011 9.75 15V20.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_8008_16325">
+                                                    <rect width="24" height="24" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                            <div class="text">Overview</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="center-item">
+                                <div class="center-heading">User Tools AI</div>
+                                <ul>
+                                    <li class="menu-item">
+                                        <a href="index.html" class="">
+                                            <div class="icon">
+                                                <i class="icon-chat"></i>
+                                            </div>
+                                            <div class="text">AI Chat Bot</div>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="index.html" class="">
+                                            <div class="icon">
+                                                <i class="icon-question"></i>
+                                            </div>
+                                            <div class="text">Question AI</div>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item has-children">
+                                        <a href="index.html" class="menu-item-button">
+                                            <div class="icon">
+                                                <i class="icon-image"></i>
+                                            </div>
+                                            <div class="text">Image generation</div>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="sub-menu-item">
+                                                <a href="index.html" class="">
+                                                    <div class="text">Text to image</div>
+                                                </a>
+                                            </li>
+                                            <li class="sub-menu-item">
+                                                <a href="index.html" class="">
+                                                    <div class="text">Image to image</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item has-childre activen">
+                                        <a href="index.html" class="menu-item-button">
+                                            <div class="icon">
+                                                <i class="icon-video"></i>
+                                            </div>
+                                            <div class="text">Video</div>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="sub-menu-item active">
+                                                <a href="index.html" class="">
+                                                    <div class="text">Text to Video</div>
+                                                </a>
+                                            </li>
+                                            <li class="sub-menu-item">
+                                                <a href="index.html" class="">
+                                                    <div class="text">Video to Video</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="center-item">
+                                <div class="center-heading">Support</div>
+                                <ul>
+                                    <li class="menu-item">
+                                        <a href="index.html" class="">
+                                            <div class="icon">
+                                                <i class="icon-CurrencyCircleDollar"></i>
+                                            </div>
+                                            <div class="text">Pricing</div>
+                                        </a>
+                                    </li>
+                                  
+                                    <li class="menu-item has-children">
+                                        <a href="index.html" class="menu-item-button">
+                                            <div class="icon">
+                                                <i class="icon-SealQuestion"></i>
+                                            </div>
+                                            <div class="text">FAQ & Help</div>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="sub-menu-item">
+                                                <a href="index.html" class="">
+                                                    <div class="text">Documentation</div>
+                                                </a>
+                                            </li>
+                                            <li class="sub-menu-item">
+                                                <a href="index.html" class="">
+                                                    <div class="text">FAQ</div>
+                                                </a>
+                                            </li>
+                                            <li class="sub-menu-item">
+                                                <a href="index.html" class="">
+                                                    <div class="text">Change Log</div>
+                                                </a>
+                                            </li>
+                                            <li class="sub-menu-item">
+                                                <a href="index.html" class="">
+                                                    <div class="text">Contact Us</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="index.html" class="">
+                                            <div class="icon">
+                                                <i class="icon-SignOut"></i>
+                                            </div>
+                                            <div class="text">Log out</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bot">
+                            <div class="flex gap4 items-center">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_8031_4856)">
+                                    <path d="M18 20.25V3.75C18 2.92157 17.3284 2.25 16.5 2.25L7.5 2.25C6.67157 2.25 6 2.92157 6 3.75L6 20.25C6 21.0784 6.67157 21.75 7.5 21.75H16.5C17.3284 21.75 18 21.0784 18 20.25Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 5.25H15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_8031_4856">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                                <div class="text-button">Download app</div>
+                            </div>
+                            <div class="wg-social flex gap16 items-center">
+                                <a class="social-item link" href="https://www.facebook.com/"><i class="icon-FacebookLogo"></i></a>
+                                <a class="social-item link" href="https://x.com/"><i class="icon-XLogo"></i></a>
+                                <a class="social-item link" href="https://discord.com/"><i class="icon-DiscordLogo"></i></a>
+                                <a class="social-item link" href="https://web.telegram.org/"><i class="icon-TelegramLogo"></i></a>
+                            </div>
+                            <div class="text-caption-1 text-Secondary">©2026 Aizox. All Rights Reserved.</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- /section-menu-left -->
+                <!-- section-content-right -->
+                <div class="section-content-right">
+                    <!-- header-dashboard -->
+                    <div class="header-dashboard">
+                        <div class="header-left">
+                            <div class="button-show-hide">
+                                <i class="icon-CaretLeft"></i>
+                            </div>
+                        </div>
+                        <div class="header-grid">
+                            <div class="flex gap12">
+                                <div class="popup-wrap infor type-header">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="header-item">
+                                                <i class="icon-Info"></i>
+                                            </span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1" >
+                                            <h6>Infor</h6>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup-wrap noti type-header">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="header-item">
+                                                <i class="icon-BellSimple"></i>
+                                            </span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1" >
+                                            <div class="noti-top">
+                                                <h6>Notification</h6>
+                                                <a href="#" class="text-button-small text-OnSurface link">View All</a>
+                                            </div>
+                                            <a href="#" class="noti-item">
+                                                <div class="title">Update system success</div>
+                                                <div class="time">2 Day ago</div>
+                                            </a>
+                                            <a href="#" class="noti-item">
+                                                <div class="title">Version 4.1.2 Has been launched</div>
+                                                <div class="time">32 Min ago</div>
+                                            </a>
+                                            <a href="#" class="noti-item">
+                                                <div class="title">Website maintenance</div>
+                                                <div class="time">2 Day ago</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown dropdown-default country">
+                                    <button class="btn btn-secondary dropdown-toggle header-item" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="icon-GlobeSimple"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                      <li><a class="dropdown-item body-text" href="#">Spanish</a></li>
+                                      <li><a class="dropdown-item body-text" href="#">English</a></li>
+                                      <li><a class="dropdown-item body-text" href="#">China</a></li>
+                                    </ul>
+                                </div>
+                                <div class="header-item button-dark-light">
+                                    <i class="icon-Sun"></i>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="popup-wrap user type-header">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle header-user" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/avatar/user-1.png" alt="image">
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton3" >
+                                        <div class="wg-user">
+                                            <div class="image">
+                                                <img src="images/avatar/user-1.png" alt="image">
+                                            </div>
+                                            <div class="text flex flex-column">
+                                                <div class="name h6">John Smith</div>
+                                                <div class="sub body-text">hi.avitex@gmail.com</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="#" class="user-item">
+                                                <i class="icon icon-UserCircle"></i>
+                                                <div class="body-text text">Edit Profile</div>
+                                            </a>
+                                            <a href="#" class="user-item">
+                                                <i class="icon icon-BellSimple"></i>
+                                                <div class="body-text text">Notifications</div>
+                                            </a>
+                                            <a href="#" class="user-item">
+                                                <i class="icon icon-LockKey"></i>
+                                                <div class="body-text text">Password</div>
+                                            </a>
+                                            <a href="#" class="user-item">
+                                                <i class="icon icon-Share"></i>
+                                                <div class="body-text text">Chat Export</div>
+                                            </a>
+                                            <a href="#" class="user-item">
+                                                <i class="icon icon-SignOut"></i>
+                                                <div class="body-text text">Logout</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /header-dashboard -->
+                    <!-- main-content -->
+                    <div class="main-content">
+                        <!-- main-content-wrap -->
+                        <div class="main-content-inner">
+                            <!-- main-content-wrap -->
+                            <div class="main-content-wrap flex">
+                                <div class="left text-to-image-wrap flex-grow-1">
+                                    <div class="heading mb-32">
+                                        <h4 class="mb-12">Text To Video</h4>
+                                        <p class="text-Secondary">Easily create an image from scratch with our AI image generator by entering descriptive text</p>
+                                    </div>
+                                    <div class="">
+                                        <div class="mb-16 flex items-center justify-content-between flex-wrap gap16">
+                                            <h5>Result:</h5>
+                                            <div class="result-action">
+                                                <a href="#"><i class="icon icon-Flag"></i></a>
+                                                <a href="#"><i class="icon icon-DownloadSimple"></i></a>
+                                                <a href="#"><i class="icon icon-Export"></i></a>
+                                                <a href="#"><i class="icon icon-ArrowsClockwise"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="video-wrap mb-28">
+                                            <img src="images/section/render-6.jpg" alt="">
+                                            <a href="https://www.youtube.com/watch?v=MLpWrANjFbI" class="popup-youtube">
+                                                <svg class="icon" width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M27.0756 16C27.0766 16.4179 26.9695 16.8289 26.7646 17.1931C26.5597 17.5573 26.2641 17.8623 25.9065 18.0784L3.74136 31.6377C3.36766 31.8665 2.93966 31.9915 2.50154 31.9996C2.06342 32.0077 1.63108 31.8987 1.24917 31.6839C0.870897 31.4724 0.555783 31.1639 0.336236 30.7903C0.116689 30.4166 0.000632059 29.9912 0 29.5578V2.44219C0.000632059 2.0088 0.116689 1.5834 0.336236 1.20974C0.555783 0.83608 0.870897 0.527639 1.24917 0.316137C1.63108 0.101299 2.06342 -0.00769122 2.50154 0.000422051C2.93966 0.00853532 3.36766 0.133458 3.74136 0.362289L25.9065 13.9216C26.2641 14.1377 26.5597 14.4427 26.7646 14.8069C26.9695 15.1711 27.0766 15.5821 27.0756 16Z" fill="white"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="flex items-center flex-wrap gap16">
+                                            <a href="#" class="tf-button">
+                                                <i class="icon icon-DownloadSimple"></i>
+                                                Download
+                                            </a>
+                                            <a href="#" class="tf-button">
+                                                <i class="icon icon-Export"></i>
+                                                Share
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form action="#" class="sidebar-right">
+                                    <div class="sidebar-btn-close sidebar-close">
+                                        <i class="icon-Export"></i>
+                                    </div>
+                                    <h5 class="title">Setting</h5>
+                                    <div class="flex-grow-1 relative">
+                                        <div class="sidebar-content">
+                                            <fieldset class="">
+                                                <label class="text-Secondary mb-8" for="">Upload Video</label>
+                                                <div class="">
+                                                    <label class="uploadfile" for="myFile-1">
+                                                        <span class="icon">
+                                                            <i class="icon-CloudArrowUp"></i>
+                                                        </span>
+                                                        <span class="text-caption-1 text">
+                                                            Drag an drop file (video) here or <br>
+                                                            <span class="text-Primary">Upload here</span>
+                                                        </span>
+                                                        <input type="file" id="myFile-1" name="filename" accept="video/*">
+                                                        <video id="myFile-input-1" class="preview-video" muted playsinline autoplay></video>
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="">
+                                                <label class="text-Secondary mb-8" for="">Upload Image</label>
+                                                <div class="">
+                                                    <label class="uploadfile" for="myFile">
+                                                        <span class="icon">
+                                                            <i class="icon-CloudArrowUp"></i>
+                                                        </span>
+                                                        <span class="text-caption-1">Drag an drop file (image) here or <br> <span class="text-Primary">Upload here</span></span>
+                                                        <input type="file" id="myFile" name="filename">
+                                                        <img src="images/" id="myFile-input" alt="image">
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                            <div class="d-grid gap16">
 
-    <!-- Click layer để click vào video cũng play/pause -->
-    <div class="click-layer" id="clickLayer" aria-label="Play/Pause"></div>
-
-    <!-- Big play -->
-    <div class="big-play" id="bigPlay">
-      <button id="bigPlayBtn" type="button" aria-label="Play">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M8 5v14l11-7z"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Controls -->
-    <div class="controls" id="controls">
-      <div class="row">
-        <!-- Volume/Mute -->
-        <div class="vol">
-          <button class="btn" id="muteBtn" type="button" aria-label="Mute">
-            <svg id="volIcon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 10v4h4l5 4V6L7 10H3zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89 1 5 3.77 5 6.71s-2.11 5.71-5 6.71v2.06c4.01-1.07 7-4.75 7-8.77s-2.99-7.7-7-8.77z"/>
-            </svg>
-          </button>
-          <input id="volRange" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+                                                <div class="d-grid gap12">
+                                                    <div class="flex gap8 items-center">
+                                                        <input class="tf-check" type="checkbox" id="foreground">
+                                                        <label class="text-caption-1" for="foreground">Affect foreground only</label>
+                                                    </div>
+                                                    <div class="flex gap8 items-center">
+                                                        <input class="tf-check" type="checkbox" id="background">
+                                                        <label class="text-caption-1" for="background">Affect background only</label>
+                                                    </div>
+                                                    <div class="flex gap8 items-center">
+                                                        <input class="tf-check" type="checkbox" id="compare">
+                                                        <label class="text-caption-1" for="compare">Compare wipe</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="tf-button w-full">
+                                        Generate video
+                                    </button>
+                                </form>
+                            </div>
+                            <!-- /main-content-wrap -->
+                        </div>
+                        <!-- /main-content-wrap -->
+                    </div>
+                    <!-- /main-content -->
+                </div>
+                <!-- /section-content-right -->
+            </div>
+            <!-- /layout-wrap -->
         </div>
-
-        <!-- Back 10s -->
-        <button class="btn" id="backBtn" type="button" aria-label="Back 10 seconds">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6 0 3.31-2.69 6-6 6s-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
-          </svg>
-        </button>
-
-        <!-- Play/Pause -->
-        <button class="btn" id="playBtn" type="button" aria-label="Play/Pause">
-          <svg id="playIcon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 5v14l11-7z"></path>
-          </svg>
-        </button>
-
-        <!-- Forward 10s -->
-        <button class="btn" id="fwdBtn" type="button" aria-label="Forward 10 seconds">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6s6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/>
-          </svg>
-        </button>
-
-        <!-- Progress + time -->
-        <div class="progress-wrap">
-          <div class="time" id="timeCurrent">0:00</div>
-
-          <div class="progress" id="progress" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="buffer" id="buffer"></div>
-            <div class="fill" id="fill"></div>
-            <div class="thumb" id="thumb"></div>
-          </div>
-
-          <div class="time" id="timeTotal">0:00</div>
-        </div>
-
-        <!-- Fullscreen -->
-        <button class="btn" id="fsBtn" type="button" aria-label="Fullscreen">
-          <svg id="fsIcon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 14H5v5h5v-2H7v-3zm0-4h2V7h3V5H5v5zm10 9h-3v2h5v-5h-2v3zm0-14V5h-5v2h3v3h2V5z"/>
-          </svg>
-        </button>
-      </div>
+        <!-- /#page -->
     </div>
-  </div>
+    <!-- /#wrapper -->
+    
+    <!-- Javascript -->
+    <!-- <script src="js/default-theme.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <!-- <script src="js/zoom.js"></script> -->
+    <!-- <script src="js/switcher.js"></script> -->
+    <!-- <script defer src="js/theme-settings.js"></script> -->
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/main.js"></script>
 
-  <script>
-    const player = document.getElementById("player");
-    const video  = document.getElementById("video");
-
-    const bigPlayBtn = document.getElementById("bigPlayBtn");
-    const clickLayer = document.getElementById("clickLayer");
-
-    const playBtn = document.getElementById("playBtn");
-    const playIcon = document.getElementById("playIcon");
-
-    const backBtn = document.getElementById("backBtn");
-    const fwdBtn  = document.getElementById("fwdBtn");
-
-    const muteBtn  = document.getElementById("muteBtn");
-    const volIcon  = document.getElementById("volIcon");
-    const volRange = document.getElementById("volRange");
-
-    const fsBtn = document.getElementById("fsBtn");
-
-    const progress = document.getElementById("progress");
-    const fill     = document.getElementById("fill");
-    const buffer   = document.getElementById("buffer");
-    const thumb    = document.getElementById("thumb");
-
-    const timeCurrent = document.getElementById("timeCurrent");
-    const timeTotal   = document.getElementById("timeTotal");
-
-    // Helpers
-    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
-
-    function fmtTime(sec){
-      if (!isFinite(sec) || sec < 0) return "0:00";
-      const s = Math.floor(sec % 60);
-      const m = Math.floor(sec / 60);
-      return `${m}:${String(s).padStart(2,"0")}`;
-    }
-
-    function setPlayingUI(isPlaying){
-      player.classList.toggle("is-playing", isPlaying);
-      player.classList.toggle("is-paused", !isPlaying);
-
-      // icon play/pause
-      playIcon.innerHTML = isPlaying
-        ? '<path d="M6 5h4v14H6zm8 0h4v14h-4z"></path>'
-        : '<path d="M8 5v14l11-7z"></path>';
-      playBtn.setAttribute("aria-label", isPlaying ? "Pause" : "Play");
-      bigPlayBtn.setAttribute("aria-label", isPlaying ? "Pause" : "Play");
-    }
-    async function safePlay() {
-  try {
-    // Nếu video chưa load metadata thì đợi một chút
-    if (video.readyState < 2) {
-      await new Promise((resolve) => {
-        const onReady = () => {
-          video.removeEventListener("loadeddata", onReady);
-          video.removeEventListener("canplay", onReady);
-          resolve();
-        };
-        video.addEventListener("loadeddata", onReady, { once: true });
-        video.addEventListener("canplay", onReady, { once: true });
-        video.load();
-      });
-    }
-
-    const p = video.play();
-    if (p && typeof p.then === "function") await p;
-  } catch (err) {
-    console.error("Play failed:", err);
-
-    // Nếu bị chặn vì policy, thử mute rồi play
-    try {
-      video.muted = true;
-      updateVolumeIcon?.();
-      const p2 = video.play();
-      if (p2 && typeof p2.then === "function") await p2;
-    } catch (err2) {
-      console.error("Play failed even after muting:", err2);
-      alert("Không play được. Kiểm tra link video / mở bằng Live Server / xem Console lỗi.");
-    }
-  }
-}
-
-    async function togglePlay(){
-      if (video.paused || video.ended){
-        try { await video.play(); } catch(e) {}
-      } else {
-        video.pause();
-      }
-    }
-
-    function updateProgress(){
-      const dur = video.duration || 0;
-      const cur = video.currentTime || 0;
-      const pct = dur ? (cur / dur) * 100 : 0;
-
-      fill.style.width = pct + "%";
-      thumb.style.left = pct + "%";
-      progress.setAttribute("aria-valuenow", String(Math.round(pct)));
-
-      timeCurrent.textContent = fmtTime(cur);
-    }
-
-    function updateDuration(){
-      timeTotal.textContent = fmtTime(video.duration || 0);
-    }
-
-    function updateBuffer(){
-      // buffer end (đơn giản: lấy range cuối)
-      try{
-        if (!video.buffered || video.buffered.length === 0) return;
-        const end = video.buffered.end(video.buffered.length - 1);
-        const dur = video.duration || 0;
-        const pct = dur ? (end / dur) * 100 : 0;
-        buffer.style.width = pct + "%";
-      }catch(e){}
-    }
-
-    function seekByClientX(clientX){
-      const rect = progress.getBoundingClientRect();
-      const x = clamp(clientX - rect.left, 0, rect.width);
-      const ratio = rect.width ? x / rect.width : 0;
-      const dur = video.duration || 0;
-      video.currentTime = ratio * dur;
-    }
-
-    function setVolume(v){
-      const vol = clamp(v, 0, 1);
-      video.volume = vol;
-      volRange.value = String(vol);
-
-      if (vol === 0){
-        video.muted = true;
-      }else{
-        video.muted = false;
-      }
-      updateVolumeIcon();
-    }
-
-    function updateVolumeIcon(){
-      const isMuted = video.muted || video.volume === 0;
-      muteBtn.setAttribute("aria-label", isMuted ? "Unmute" : "Mute");
-
-      // icon đơn giản: muted vs volume
-      volIcon.innerHTML = isMuted
-        ? '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.22l2.45 2.45c.03-.21.05-.42.05-.64zM19 12c0 .94-.2 1.82-.56 2.64l1.51 1.51A8.95 8.95 0 0 0 21 12c0-3.23-1.74-6.05-4.32-7.56v2.24C18.68 7.86 19 9.86 19 12zM4.27 3 3 4.27 7.73 9H3v6h4l5 4v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.35-.32 2.59-.93 3.63-1.75L19.73 21 21 19.73 4.27 3zM12 6.83 9.17 4H12v2.83z"/>'
-        : '<path d="M3 10v4h4l5 4V6L7 10H3zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89 1 5 3.77 5 6.71s-2.11 5.71-5 6.71v2.06c4.01-1.07 7-4.75 7-8.77s-2.99-7.7-7-8.77z"/>';
-    }
-
-    async function toggleFullscreen(){
-      const el = player;
-      if (!document.fullscreenElement){
-        try { await el.requestFullscreen(); } catch(e) {}
-      } else {
-        try { await document.exitFullscreen(); } catch(e) {}
-      }
-    }
-
-    // Events
-    bigPlayBtn.addEventListener("click", togglePlay);
-    playBtn.addEventListener("click", togglePlay);
-    clickLayer.addEventListener("click", togglePlay);
-
-    backBtn.addEventListener("click", () => {
-      video.currentTime = Math.max(0, (video.currentTime || 0) - 10);
-    });
-    fwdBtn.addEventListener("click", () => {
-      const dur = video.duration || 0;
-      video.currentTime = Math.min(dur, (video.currentTime || 0) + 10);
-    });
-
-    muteBtn.addEventListener("click", () => {
-      video.muted = !video.muted;
-      updateVolumeIcon();
-    });
-
-    volRange.addEventListener("input", (e) => {
-      setVolume(parseFloat(e.target.value));
-    });
-
-    fsBtn.addEventListener("click", toggleFullscreen);
-
-    // Seek by click/drag
-    let isDragging = false;
-
-    progress.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      seekByClientX(e.clientX);
-    });
-    window.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      seekByClientX(e.clientX);
-    });
-    window.addEventListener("mouseup", () => {
-      isDragging = false;
-    });
-
-    // Touch
-    progress.addEventListener("touchstart", (e) => {
-      isDragging = true;
-      seekByClientX(e.touches[0].clientX);
-    }, {passive:true});
-    progress.addEventListener("touchmove", (e) => {
-      if (!isDragging) return;
-      seekByClientX(e.touches[0].clientX);
-    }, {passive:true});
-    progress.addEventListener("touchend", () => {
-      isDragging = false;
-    });
-
-    // Video state updates
-    video.addEventListener("loadedmetadata", () => {
-      updateDuration();
-      updateProgress();
-      updateBuffer();
-    });
-    video.addEventListener("timeupdate", updateProgress);
-    video.addEventListener("progress", updateBuffer);
-    video.addEventListener("volumechange", updateVolumeIcon);
-
-    video.addEventListener("play", () => setPlayingUI(true));
-    video.addEventListener("pause", () => setPlayingUI(false));
-    video.addEventListener("ended", () => setPlayingUI(false));
-
-    // Keyboard shortcuts
-    window.addEventListener("keydown", (e) => {
-      // tránh ảnh hưởng khi đang gõ input
-      const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
-      if (tag === "input" || tag === "textarea") return;
-
-      if (e.code === "Space") { e.preventDefault(); togglePlay(); }
-      if (e.code === "ArrowLeft") video.currentTime = Math.max(0, (video.currentTime || 0) - 5);
-      if (e.code === "ArrowRight"){
-        const dur = video.duration || 0;
-        video.currentTime = Math.min(dur, (video.currentTime || 0) + 5);
-      }
-      if (e.key.toLowerCase() === "m") video.muted = !video.muted;
-      if (e.key.toLowerCase() === "f") toggleFullscreen();
-    });
-
-    // Init
-    setPlayingUI(false);
-    setVolume(1);
-
-    video.addEventListener("error", () => {
-    console.error("VIDEO ERROR:", video.error);
-    });
-  </script>
 </body>
+
 </html>

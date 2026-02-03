@@ -231,7 +231,6 @@ img {
 }
 
 p {
-    font-family: $font-main-family;
     font-weight: 400;
     font-size  : 16px;
     line-height: 26px;
@@ -701,6 +700,9 @@ h6,.h6 {
 .gap24 {
     gap: 24px !important;
 }
+.gap28 {
+    gap: 28px !important;
+}
 .gap30 {
     gap: 30px !important;
 }
@@ -888,6 +890,9 @@ h6,.h6 {
 
 .fs16 {
     font-size: 16px !important;
+}
+.fs24 {
+    font-size: 24px !important;
 }
 
 .h152 {

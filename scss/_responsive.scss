@@ -78,6 +78,12 @@
 }
 
 @media (max-width: 1200px) {
+    .login-wrap {
+        .content {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
     .sidebar-right {
         position: fixed;
         top: 80px;
@@ -227,6 +233,26 @@
 }
 
 @media (max-width: 991px) {
+    .login-wrap {
+        .content {
+           width: 45%;
+        }
+        .image .title {
+            font-size: 50px;
+            line-height: 62px;
+        }
+    }
+    .contact-content {
+        gap: 30px;
+        .image .infor {
+            top: 15px;
+            left: 15px;
+            right: 15px;
+        }
+    }
+    .faq-doc-wrap .doc-scroll {
+        width: 285px;
+    }
     .widget-tabs.style-menu-tab .widget-content-inner {
         padding: 30px 15px;
     }
@@ -255,6 +281,32 @@
 }
 
 @media (max-width: 767px) {
+    .login-wrap {
+        .content {
+            width: 100%;            
+        }
+        .image {
+            display: none;
+        }
+    }
+    .contact-content {
+        flex-direction: column;
+        >* {
+            width: 100% !important;
+        }
+    }
+    .faqs .widget-accordion {
+        padding: 20px 15px;
+    }
+    .faq-doc-wrap .doc-scroll {
+        display: none;
+    }
+    .grid-2-col {
+        grid-template-columns: 1fr;
+    }
+    .pricing-box {
+        padding: 20px 15px;
+    }
     .image-item .image-action {
         right: 15px;
         left: 15px;

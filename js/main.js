@@ -130,8 +130,8 @@
       });
     }
 
-    $(".choose-item").click(function () {
-      $(this).closest(".list-choose").find(".active").removeClass("active");
+    $(".item-check").click(function () {
+      $(this).closest(".list-checks").find(".active").removeClass("active");
       $(this).addClass("active");
     });
   }
@@ -149,23 +149,48 @@
 
   var uploadfile = function () {
     if ($("#myFile").length) {
-        document
-            .getElementById("myFile")
-            .addEventListener("change", function (event) {
-                var file = event.target.files[0];
-                var reader = new FileReader();
+      $("#myFile").on("change", function (e) {
+        var file = e.target.files[0];
+        if (!file) return;
+    
+        var $label = $(this).closest(".uploadfile");
+        var reader = new FileReader();
+    
+        reader.onload = function (ev) {
+          var $img = $("#myFile-input");
+          $img.attr("src", ev.target.result);
+          $label.addClass("has-img");
+        };
+    
+        reader.readAsDataURL(file);
+      });
+    }
+    
 
-                reader.onload = function (e) {
-                    var imgElement = document.getElementById("myFile-input");
-                    imgElement.src = e.target.result;
-                    imgElement.classList.add("has-img");
-                };
-
-                if (file) {
-                    reader.readAsDataURL(file);
-                }
-            });
-      }
+    if ($("#myFile-1").length) {
+      $("#myFile-1").on("change", function (e) {
+        var file = e.target.files[0];
+        if (!file) return;
+    
+        if (!file.type.startsWith("video/")) {
+          alert("Please upload a video file!");
+          this.value = "";
+          return;
+        }
+    
+        var $label = $(this).closest(".uploadfile");
+        var video = document.getElementById("myFile-input-1");
+    
+        var url = URL.createObjectURL(file);
+        video.src = url;
+        video.load();
+    
+        $label.addClass("has-video");
+    
+        video.play().catch(() => {});
+      });
+    }
+    
   };
 
   var writeReview = function () {
@@ -285,6 +310,91 @@
     }
   });
 
+  var scroll = function () {
+    if ($(".faq-doc-wrap").length > 0) {
+      var $container = $(".doc-content");
+      var $links = $(".doc-process .item-check");
+      var $inner = $container.find(".inner");
+
+      if (!$container.length || !$links.length || !$inner.length) return;
+
+      var sections = [];
+      $links.each(function () {
+        var $a = $(this);
+        var hash = $a.attr("href");
+        if (!hash || hash.charAt(0) !== "#") return;
+
+        var $t = $inner.find(hash);
+        if ($t.length) sections.push({ hash: hash, $link: $a, $target: $t });
+      });
+      if (!sections.length) return;
+
+      function setActive(hash) {
+        $links.removeClass("active");
+        $links.filter('[href="' + hash + '"]').addClass("active");
+      }
+
+      function getScrollTopTo($target, extraOffset) {
+        extraOffset = extraOffset || 0;
+
+        var containerTop = $container.offset().top;
+        var targetTop = $target.offset().top;
+
+        return $container.scrollTop() + (targetTop - containerTop) - extraOffset;
+      }
+
+      $links.on("click", function (e) {
+        var hash = $(this).attr("href");
+        var item = sections.find(function (s) { return s.hash === hash; });
+        if (!item) return;
+
+        e.preventDefault();
+
+        var top = getScrollTopTo(item.$target, 0);
+        $container.stop(true).animate({ scrollTop: top }, 450);
+        setActive(hash);
+      });
+
+      function updateActive() {
+        var current = sections[0].hash;
+
+        var marker = $container.offset().top + 60;
+
+        for (var i = 0; i < sections.length; i++) {
+          if (sections[i].$target.offset().top <= marker) {
+            current = sections[i].hash;
+          }
+        }
+        setActive(current);
+      }
+
+      var ticking = false;
+      $container.on("scroll", function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          updateActive();
+          ticking = false;
+        });
+      });
+
+      $(window).on("resize", function () {
+        updateActive();
+      });
+
+      updateActive();
+
+    }
+  };
+
+  var video = function(){
+    if ($('div').hasClass('video-wrap')) {
+      $('.popup-youtube').magnificPopup({
+        type: 'iframe'
+      });
+    }
+  };
+
   // Dom Ready
   $(function () {
     selectImages();
@@ -299,6 +409,8 @@
     writeReview();
     multiselect();
     handleMessage();
+    scroll();
+    video();
   });
 
 })(jQuery);

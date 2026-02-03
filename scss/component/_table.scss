@@ -1,14 +1,17 @@
 .wg-table {
     overflow-x: auto !important;
     &::-webkit-scrollbar {
-        height: 4px;
+        height: 8px; 
     }
     &::-webkit-scrollbar-thumb {
-        background: var(--Note);
-        border-radius: 10px;
+        background: var(--Secondary);
+        border-radius: 0px;
+    }
+    &::-webkit-scrollbar-track {
+        background: var(--Line);
     }
     .table-title {
-        border-bottom: 1px solid var(--Line);
+        // border-bottom: 1px solid var(--Line);
         padding: 12px 0;
     }
     > * {
