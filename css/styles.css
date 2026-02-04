@@ -4715,7 +4715,7 @@ select option {
   border: none;
   padding: 30px;
   gap: 24px;
-  background-color: var(--White);
+  background-color: var(--OnSurface);
 }
 .offcanvas.offcanvas-top {
   border-radius: 0px 0px 14px 14px;
@@ -4771,7 +4771,7 @@ select option {
   color: #0A0A0C;
 }
 .offcanvas-body form > fieldset > .body-title {
-  color: var(--Main-Dark);
+  color: var(--DarkSurface);
 }
 .offcanvas-body form > fieldset:last-of-type {
   padding-bottom: 0;
@@ -5540,137 +5540,24 @@ select option {
   cursor: pointer;
 }
 
-.modalDemo .demo-title {
-  margin-top: 50px;
-  margin-bottom: 44px;
-  font-weight: 500;
-  text-align: center;
-}
-.modalDemo .modal-dialog {
-  max-width: 1540px;
+.popup-profile .modal-dialog {
+  max-width: 990px;
   margin-top: 8px;
   margin-bottom: 8px;
   height: calc(100vh - 16px);
 }
-.modalDemo .modal-content {
-  padding: 0 50px 40px;
-  background-color: var(--White);
+.popup-profile .modal-content {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  background-color: var(--Surface);
   width: 100%;
   border-radius: 10px;
-  margin: 0 30px;
+  margin: 0 15px;
   max-height: calc(100vh - 60px);
   border: 0;
   cursor: default;
   overflow: hidden;
-}
-.modalDemo .header {
-  position: relative;
-}
-.modalDemo .header .icon-close-popup {
-  position: absolute;
-  top: 18px;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: rgb(134, 134, 134);
-}
-
-.tf-product-modal .modal-dialog {
-  max-width: min(625px, 90vw);
-}
-.tf-product-modal .modal-dialog .modal-content {
-  padding: 38px 36px 40px;
-  margin-left: 0;
-  margin-right: 0;
-}
-.tf-product-modal .modal-dialog .modal-content .header {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.tf-product-modal .modal-dialog .modal-content .header .demo-title {
-  margin: 0;
-  text-align: start;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 31px;
-  color: var(--Main-Dark);
-}
-.tf-product-modal .modal-dialog .modal-content .header span {
-  position: unset;
-  color: var(--Main-Dark);
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.tf-product-modal .modal-dialog .modal-content .header span:hover {
-  color: var(--Main);
-}
-.tf-product-modal .modal-dialog .modal-content h6 {
-  font-weight: 600;
-  line-height: 24px;
-  margin-bottom: 25px;
-}
-.tf-product-modal .modal-dialog .modal-content .title {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 22px;
-  margin-top: 15px;
-  color: var(--Main-Dark);
-}
-.tf-product-modal .modal-dialog .modal-content p {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-.popup-findsize .modal-dialog {
-  max-width: min(900px, 90vw);
-}
-.popup-findsize .tf-rte {
-  overflow-y: auto;
-}
-.popup-findsize .tf-rte::-webkit-scrollbar {
-  width: 2px;
-}
-.popup-findsize .tf-sizeguide-table {
-  border: 1px solid rgba(48, 48, 48, 0.1019607843);
-  border-radius: 5px;
-  width: 100%;
-}
-.popup-findsize .tf-sizeguide-table th {
-  border: 1px solid rgba(48, 48, 48, 0.1019607843);
-  padding: 8px 5px;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--Main-Dark);
-}
-.popup-findsize .tf-sizeguide-table td {
-  border: 1px solid rgba(48, 48, 48, 0.1019607843);
-  border-width: 0 1px 1px 0;
-  padding: 8px 5px;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--Main-Dark);
-}
-.popup-findsize .tf-page-size-chart-content {
-  margin-top: 15px;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 8fr 4fr;
-}
-.popup-findsize p {
-  color: #545454;
 }
 
 .wg-table {
@@ -6423,6 +6310,51 @@ select option {
 }
 .tf-select.style-default.open .current-icon {
   transform: rotate(180deg);
+}
+
+.noUi-target {
+  border: 0;
+  height: 28px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.noUi-base .noUi-connects {
+  border-radius: 8px;
+  background-color: var(--DarkSurface);
+  border: 1px solid var(--Line);
+}
+
+.noUi-connect {
+  background-color: var(--Line);
+}
+
+.noUi-horizontal .noUi-handle,
+.noUi-vertical .noUi-handle {
+  top: 1px;
+  right: 0 !important;
+  height: 26px;
+  width: 5px;
+  border-radius: 0;
+  border: 0;
+  background-color: var(--Primary);
+  box-shadow: unset;
+  cursor: pointer;
+}
+.noUi-horizontal .noUi-handle::before, .noUi-horizontal .noUi-handle::after,
+.noUi-vertical .noUi-handle::before,
+.noUi-vertical .noUi-handle::after {
+  content: none;
+}
+
+.slider-tooltip-default .noUi-tooltip {
+  border-radius: 8px;
+  border-color: var(--line);
+  line-height: 14px;
+  margin-bottom: 4px;
+}
+.slider-tooltip-default .noUi-tooltip::after {
+  content: "Km";
 }
 
 .dark-theme {

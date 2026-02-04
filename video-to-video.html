@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="css/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 
@@ -401,7 +402,7 @@
                                                             <span class="text-Primary">Upload here</span>
                                                         </span>
                                                         <input type="file" id="myFile-1" name="filename" accept="video/*">
-                                                        <video id="myFile-input-1" class="preview-video" muted playsinline autoplay></video>
+                                                        <video id="myFile-input-1" class="preview-video" muted playsinline controls></video>
                                                     </label>
                                                 </div>
                                             </fieldset>
@@ -419,7 +420,33 @@
                                                 </div>
                                             </fieldset>
                                             <div class="d-grid gap16">
-
+                                                <div>
+                                                    <div class="mb-8 flex items-center justify-content-between">
+                                                        <div class="text-Secondary">
+                                                            Style: <span class="fw-7 text-OnSurface">Structural</span>
+                                                        </div>
+                                                        <div class="mt-20 field-structural fw-normal"></div>
+                                                    </div>
+                                                    <div id="slider-structural"></div>
+                                                </div>
+                                                <div>
+                                                    <div class="mb-8 flex items-center justify-content-between">
+                                                        <div class="text-Secondary">
+                                                            Style: <span class="fw-7 text-OnSurface">Weight</span>
+                                                        </div>
+                                                        <div class="mt-20 field-weight fw-normal"></div>
+                                                    </div>
+                                                    <div id="slider-weight"></div>
+                                                </div>
+                                                <div>
+                                                    <div class="mb-8 flex items-center justify-content-between">
+                                                        <div class="text-Secondary">
+                                                            Frame consistency
+                                                        </div>
+                                                        <div class="mt-20 field-consistency fw-normal"></div>
+                                                    </div>
+                                                    <div id="consistency"></div>
+                                                </div>
                                                 <div class="d-grid gap12">
                                                     <div class="flex gap8 items-center">
                                                         <input class="tf-check" type="checkbox" id="foreground">
@@ -464,6 +491,8 @@
     <!-- <script src="js/zoom.js"></script> -->
     <!-- <script src="js/switcher.js"></script> -->
     <!-- <script defer src="js/theme-settings.js"></script> -->
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/rangle-slider.js"></script>
     <script src="js/nice-select.min.js"></script>
     <script src="js/magnific-popup.min.js"></script>
     <script src="js/main.js"></script>

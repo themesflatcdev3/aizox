@@ -199,7 +199,7 @@ $(document).ready(function () {
 
     '<div class="divider"></div>' +
     '<div class="setting cursor-pointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">' +
-        '<i class="icon-settings"></i>' +
+        '<i class="icon-settings">a</i>' +
     '</div>' ;
     
   $(".header-grid").append(x);

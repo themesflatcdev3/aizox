@@ -698,6 +698,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .tf-section-1 {
     display: grid !important;
     gap: 30px 20px;
@@ -802,7 +821,7 @@
     border: none;
     padding: 30px;
     gap: 24px;
-    background-color: var(--White);
+    background-color: var(--OnSurface);
     &.offcanvas-top {
         border-radius: 0px 0px 14px 14px;
         width: 100%;
@@ -847,7 +866,7 @@
                 color: #0A0A0C;
             }
             >.body-title {
-                color: var(--Main-Dark);
+                color: var(--DarkSurface);
             }
             padding-bottom: 20px;
             border-bottom: 1px solid #EDF1F5;

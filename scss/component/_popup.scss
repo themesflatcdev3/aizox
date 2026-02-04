@@ -218,137 +218,24 @@
     }
 }
 
-.modalDemo {
-    .demo-title {
-        margin-top: 50px;
-        margin-bottom: 44px;
-        font-weight: 500;
-        text-align: center;
-    }
+.popup-profile {
     .modal-dialog {
-        max-width: 1540px;
+        max-width: 990px;
         margin-top: 8px;
         margin-bottom: 8px;
         height: calc(100vh - 16px);
     }
     .modal-content {
-        padding: 0 50px 40px;
-        background-color: var(--White);
+        display: flex;
+        flex-direction: row;
+        padding: 0 ;
+        background-color: var(--Surface);
         width: 100%;
         border-radius: 10px;
-        margin: 0 30px;
+        margin: 0 15px;
         max-height: calc(100vh - 60px);
         border: 0;
         cursor: default;
         overflow: hidden;
-    }
-    .header {
-        position: relative;
-        .icon-close-popup {
-            position: absolute;
-            top: 18px;
-            right: 0;
-            width: 30px;
-            height: 30px;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            color: rgb(134 134 134);
-        }
-    }
-}
-
-.tf-product-modal {
-    .modal-dialog {
-        max-width: min(625px, 90vw);
-        .modal-content {
-            padding: 38px 36px 40px;
-            margin-left: 0;
-            margin-right: 0;
-            .header {
-                margin-bottom: 24px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                .demo-title {
-                    margin: 0;
-                    text-align: start;
-                    font-size: 26px;
-                    font-weight: 400;
-                    line-height: 31px;
-                    color: var(--Main-Dark);
-                }
-                span {
-                    position: unset;
-                    color: var(--Main-Dark);
-                    @include transition3;
-                    &:hover {
-                        color: var(--Main);
-                    }
-                }
-            }
-            h6 {
-                font-weight: 600;
-                line-height: 24px;
-                margin-bottom: 25px;
-            }
-            .title {
-                font-size: 18px;
-                font-weight: 600;
-                line-height: 22px;
-                margin-top: 15px;
-                color: var(--Main-Dark);
-            }
-            p {
-                margin-top: 15px;
-                margin-bottom: 20px;
-            }
-        }
-    }
-}
-
-.popup-findsize {
-    .modal-dialog {
-        max-width: min(900px, 90vw);
-    }
-    .tf-rte {
-        overflow-y: auto;
-        &::-webkit-scrollbar {
-            width: 2px;
-        }
-    }
-    .tf-sizeguide-table {
-        border: 1px solid #3030301A;
-        border-radius: 5px;
-        width: 100%;
-        th {
-            border: 1px solid #3030301A;
-            padding: 8px 5px;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 20px;
-            color: var(--Main-Dark);
-        }
-        td {
-            border: 1px solid #3030301A;
-            border-width: 0 1px 1px 0;
-            padding: 8px 5px;
-            font-size: 14px;
-            line-height: 20px;
-            color: var(--Main-Dark);
-        }
-    }
-    .tf-page-size-chart-content {
-        margin-top: 15px;
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 8fr 4fr;
-    }
-    p {
-        color: #545454;
     }
 }
