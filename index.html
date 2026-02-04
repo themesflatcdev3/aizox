@@ -243,12 +243,12 @@
                             <div class="flex gap12">
                                 <div class="popup-wrap infor type-header">
                                     <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-item">
                                                 <i class="icon-Info"></i>
                                             </span>
                                         </button>
-                                        <div class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1" >
+                                        <div class="dropdown-menu dropdown-menu-end has-content" role="region" aria-label="dropdownMenuButton2" >
                                             <h6>Infor</h6>
                                             
                                         </div>
@@ -261,7 +261,7 @@
                                                 <i class="icon-BellSimple"></i>
                                             </span>
                                         </button>
-                                        <div class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1" >
+                                        <div class="dropdown-menu dropdown-menu-end has-content" role="region" aria-label="dropdownMenuButton1" >
                                             <div class="noti-top">
                                                 <h6>Notification</h6>
                                                 <a href="#" class="text-button-small text-OnSurface link">View All</a>
@@ -301,7 +301,7 @@
                                     <button class="btn btn-secondary dropdown-toggle header-user" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                         <img src="images/avatar/user-1.png" alt="image">
                                     </button>
-                                    <div class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton3" >
+                                    <div class="dropdown-menu dropdown-menu-end has-content" role="region" aria-label="dropdownMenuButton3" >
                                         <div class="wg-user">
                                             <div class="image">
                                                 <img src="images/avatar/user-1.png" alt="image">
@@ -527,7 +527,7 @@
                                             <div>
                                                 <label class="add-img mb-16" for="avatar">
                                                     <input class="" type="file" id="avatar" name="filename">
-                                                    <div class="tf-btn-2 text-button w-full">Upload New Image</div>
+                                                    <span class="tf-btn-2 text-button w-full">Upload New Image</span>
                                                 </label>
                                                 <div class="text-caption-1 text-Secondary">
                                                     At least 800x800 px recommended. <br>
@@ -538,18 +538,18 @@
                                     </div>
                                     <div class="d-grid gap16">
                                         <fieldset class="">
-                                            <label class="text-Secondary mb-8" for="">User Name</label>
+                                            <label class="text-Secondary mb-8">User Name</label>
                                             <input type="text" name="name" value="John Smith">
                                         </fieldset>
                                         <fieldset class="location">
-                                            <label class="text-Secondary mb-8" for="">Location</label>
+                                            <label class="text-Secondary mb-8">Location</label>
                                             <div class="relative">
                                                 <input type="text" name="name" value="New York, USA">
                                                 <i class="icon icon-MapPin"></i>
                                             </div>
                                         </fieldset>
                                         <fieldset class="">
-                                            <label class="text-Secondary mb-8" for="">Bio</label>
+                                            <label class="text-Secondary mb-8">Bio</label>
                                             <textarea name="bio">I’m UX/UI designer</textarea>
                                         </fieldset>
                                     </div>
