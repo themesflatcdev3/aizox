@@ -1323,12 +1323,12 @@ a:hover {
 
 .faqs {
   display: grid;
-  gap: 12px;
+  gap: 20px;
 }
 .faqs .widget-accordion {
-  padding: 20px 32px;
-  border: 1px solid var(--Line);
-  border-radius: 12px;
+  padding: 19px 30px;
+  border: 2px solid var(--Line);
+  border-radius: 16px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -1367,7 +1367,7 @@ a:hover {
   padding: 0;
   padding-top: 16px;
   border-top: 1px solid var(--Line);
-  margin-top: 16px;
+  margin-top: 15px;
 }
 .faqs:not(:last-child) {
   border-bottom: 1px solid rgba(48, 48, 48, 0.1);
@@ -1478,6 +1478,9 @@ a:hover {
   color: var(--DarkSurface);
   background-color: var(--Primary);
   border-radius: 99px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
 }
 .pricing-box ul {
   display: grid;
@@ -1492,7 +1495,7 @@ a:hover {
 .change-log-box {
   display: grid;
   gap: 16px;
-  padding: 24px;
+  padding: 23px;
   border-radius: 16px;
   border: 1px solid var(--Line);
   background-color: var(--DarkSurface);
@@ -1501,7 +1504,7 @@ a:hover {
   display: flex;
   gap: 16px;
   align-items: center;
-  padding-bottom: 15px;
+  padding-bottom: 13px;
   border-bottom: 1px solid var(--Line);
 }
 .change-log-box .heading .title {
@@ -1517,6 +1520,7 @@ a:hover {
   font-weight: 700;
   font-size: 12px;
   line-height: 20px;
+  letter-spacing: 1px;
 }
 .change-log-box .descs {
   display: grid;
@@ -1525,7 +1529,7 @@ a:hover {
 .change-log-box .descs .desc-item {
   position: relative;
   color: var(--Secondary);
-  padding-left: 20px;
+  padding-left: 24px;
 }
 .change-log-box .descs .desc-item::before {
   position: absolute;
@@ -1614,6 +1618,30 @@ a:hover {
 }
 .video-wrap .popup-youtube .icon {
   margin-left: 8px;
+}
+
+.profile-avatar {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.profile-avatar img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.profile-avatar .add-img .tf-btn-2 {
+  padding: 10px 23px;
+}
+.profile-avatar .add-img input {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 .view-all {
@@ -3487,7 +3515,7 @@ ul.list-text.type-number {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 8px;
+  padding: 7px 8px;
   border: 1px solid var(--Primary);
   border-radius: 8px;
   -webkit-transition: all 0.3s ease;
@@ -3714,6 +3742,9 @@ form input[type=submit] {
 }
 form textarea {
   height: 100px !important;
+}
+form textarea.h136 {
+  height: 136px !important;
 }
 form .cols {
   display: -webkit-box;
@@ -3952,7 +3983,7 @@ select option {
   background-color: var(--Surface);
 }
 .layout-wrap.full-width .section-content-right .main-content {
-  padding-left: 0;
+  padding-left: 30px;
 }
 .layout-wrap.full-width .section-content-right .header-dashboard {
   width: 100%;
@@ -4017,7 +4048,7 @@ select option {
 .chat-bot-wrap .content-chat {
   position: absolute;
   inset: 0;
-  padding: 62px 40px 40px;
+  padding: 62px 33px 40px 40px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -4065,22 +4096,21 @@ select option {
 .chat-bot-wrap .bubble-you .content {
   max-width: 800px;
 }
-
-.form-chat {
+.chat-bot-wrap .form-chat {
   border-top: 1px solid var(--Line);
   padding: 25px 40px 26px 40px;
 }
-.form-chat input {
+.chat-bot-wrap .form-chat input {
   font-size: 18px;
   line-height: 28px;
   padding: 19px 65px 19px 23px;
   border-radius: 99px;
   color: var(--OnSurface);
 }
-.form-chat input::placeholder {
+.chat-bot-wrap .form-chat input::placeholder {
   color: var(--Secondary);
 }
-.form-chat .btn-message {
+.chat-bot-wrap .form-chat .btn-message {
   position: absolute;
   right: 52px;
   top: 50%;
@@ -4102,7 +4132,7 @@ select option {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.form-chat .btn-message:hover {
+.chat-bot-wrap .form-chat .btn-message:hover {
   background-color: transparent;
   color: var(--Primary);
 }
@@ -4302,7 +4332,7 @@ select option {
   gap: 16px;
 }
 .list-quick-search .quick-search-item {
-  padding: 15px;
+  padding: 15px 20px;
   border: 1px solid var(--Line);
   border-radius: 12px;
 }
@@ -4460,7 +4490,7 @@ select option {
 .faq-doc-wrap .doc-content .inner {
   position: relative;
   flex-grow: 1;
-  max-width: 990px;
+  max-width: 982px;
   padding: 0px 15px;
   margin-left: auto;
   margin-right: auto;
@@ -4564,7 +4594,7 @@ select option {
 
 .login-wrap {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
 }
 .login-wrap .image {
   position: relative;
@@ -4591,7 +4621,7 @@ select option {
   place-content: center;
   width: 29.167%;
   flex-shrink: 0;
-  padding: 60px;
+  padding: 20px 60px;
 }
 
 .form-login {
@@ -4971,7 +5001,7 @@ select option {
 .layout-wrap .section-menu-left .menu-item.has-children::after {
   position: absolute;
   content: "\e903";
-  top: 16px;
+  top: 12px;
   right: 16px;
   color: var(--OnSurface);
   font-size: 20px;
@@ -5036,6 +5066,7 @@ select option {
   font-size: 12px;
   line-height: 20px;
   font-weight: 700;
+  letter-spacing: 1.1px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -5556,8 +5587,79 @@ select option {
   margin: 0 15px;
   max-height: calc(100vh - 60px);
   border: 0;
-  cursor: default;
-  overflow: hidden;
+  cursor: unset;
+  overflow: auto;
+}
+.popup-profile .icon-close-popup {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 24px;
+  z-index: 2;
+  cursor: pointer;
+}
+.popup-profile .left-menu {
+  width: 33.333%;
+  padding: 40px;
+}
+.popup-profile .left-menu .btn-del {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 11px 12px;
+  color: var(--Error);
+}
+.popup-profile .left-menu .btn-del .icon {
+  font-size: 24px;
+}
+.popup-profile .widget-menu-tab {
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--Line);
+  margin-bottom: 8px;
+}
+.popup-profile .widget-menu-tab .item-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 11px 12px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.popup-profile .widget-menu-tab .item-title .icon {
+  font-size: 24px;
+}
+.popup-profile .widget-menu-tab .item-title::after {
+  display: none;
+}
+.popup-profile .widget-menu-tab .item-title:hover, .popup-profile .widget-menu-tab .item-title.active {
+  background-color: var(--DarkSurface);
+}
+.popup-profile .right-content {
+  flex-grow: 1;
+  border-left: 1px solid var(--Line);
+  padding: 40px;
+}
+.popup-profile .form-profile {
+  display: grid;
+  gap: 32px;
+}
+.popup-profile .form-profile .location .icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--Secondary);
+  font-size: 20px;
+}
+.popup-profile .form-profile .location input {
+  padding-left: 47px;
 }
 
 .wg-table {
@@ -6282,11 +6384,10 @@ select option {
   background-color: var(--DarkSurface);
 }
 .tf-select::after {
-  width: 6px;
-  height: 6px;
-  margin-top: -4px;
-  right: 14px;
-  border-color: var(--On-Surface);
+  width: 10px;
+  height: 10px;
+  margin-top: -7px;
+  right: 22px;
 }
 .tf-select .list {
   max-height: unset;
@@ -7527,11 +7628,6 @@ select option {
   color: #fff;
 }
 
-@media (min-width: 1440px) {
-  .login-page {
-    height: 100vh;
-  }
-}
 @media (min-width: 768px) {
   .po-sticky {
     position: -webkit-sticky;
@@ -7547,6 +7643,10 @@ select option {
   }
 }
 @media (max-width: 1440px) {
+  .login-wrap {
+    height: unset;
+    min-height: 100vh;
+  }
   .list-quick-search {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -7766,6 +7866,31 @@ select option {
   }
 }
 @media (max-width: 767px) {
+  .user-tools-item {
+    padding: 15px;
+    gap: 10px;
+  }
+  .popup-profile .modal-content {
+    flex-direction: column;
+  }
+  .popup-profile .modal-content .icon-close-popup {
+    top: 10px;
+    right: 10px;
+  }
+  .popup-profile .modal-content .left-menu {
+    width: 100%;
+    padding: 40px 15px 0px;
+  }
+  .popup-profile .modal-content .right-content {
+    padding: 15px;
+  }
+  .profile-avatar {
+    gap: 10px;
+  }
+  .profile-avatar img {
+    width: 80px;
+    height: 80px;
+  }
   .login-wrap .content {
     width: 100%;
   }

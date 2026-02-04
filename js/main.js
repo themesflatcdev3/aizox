@@ -166,6 +166,24 @@
       });
     }
     
+    if ($("#avatar").length) {
+      document
+        .getElementById("avatar")
+        .addEventListener("change", function (event) {
+          var file = event.target.files[0];
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var imgElement = document.getElementById("avatar-input");
+            imgElement.src = e.target.result;
+            imgElement.classList.add("has-img");
+          };
+
+          if (file) {
+            reader.readAsDataURL(file);
+          }
+        });
+    }
 
     if ($("#myFile-1").length) {
       $("#myFile-1").on("change", function (e) {

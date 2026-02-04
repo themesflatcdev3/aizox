@@ -142,7 +142,10 @@ form {
         position          : relative;
     }
     textarea {
-        height:100px !important;
+        height: 100px !important;
+        &.h136 {
+            height: 136px !important;
+        }
     }
     .cols {
         @include d-flex;

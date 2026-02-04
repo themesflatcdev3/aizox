@@ -95,7 +95,7 @@
                 &::after {
                     position: absolute;
                     content: '\e903';
-                    top: 16px;
+                    top: 12px;
                     right: 16px;
                     color: var(--OnSurface);
                     font-size: 20px;
@@ -182,6 +182,7 @@
             font-size: 12px;
             line-height: 20px;
             font-weight: 700;
+            letter-spacing: 1.1px;
             text-transform: uppercase;
             margin-bottom: 8px;
         }

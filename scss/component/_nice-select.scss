@@ -235,12 +235,10 @@
     border: 1px solid var(--Line);
     background-color: var(--DarkSurface);
     &::after {
-        width: 6px;
-        height: 6px;
-        margin-top: -4px;
-        right: 14px;
-        // content: none;
-        border-color: var(--On-Surface);
+        width: 10px;
+        height: 10px;
+        margin-top: -7px;
+        right: 22px;
     }
     .list {
         max-height: unset;

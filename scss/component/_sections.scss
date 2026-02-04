@@ -29,7 +29,8 @@
     &.full-width {
         .section-content-right {
             .main-content {
-                padding-left: 0;
+                padding-left: 30px;
+              
             }
             .header-dashboard {
                 width: 100%;
@@ -92,7 +93,7 @@
     .content-chat {
         position: absolute;
         inset: 0;
-        padding: 62px 40px 40px;
+        padding: 62px 33px 40px 40px;
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -142,41 +143,40 @@
             max-width: 800px;
         }
     }
-}
-
-.form-chat {
-    border-top: 1px solid var(--Line);
-    padding: 25px 40px 26px 40px;
-    input {
-        font-size: 18px;
-        line-height: 28px;
-        padding: 19px 65px 19px 23px;
-        border-radius: 99px;
-        color: var(--OnSurface);
-        &::placeholder {
-            color: var(--Secondary);
+    .form-chat {
+        border-top: 1px solid var(--Line);
+        padding: 25px 40px 26px 40px;
+        input {
+            font-size: 18px;
+            line-height: 28px;
+            padding: 19px 65px 19px 23px;
+            border-radius: 99px;
+            color: var(--OnSurface);
+            &::placeholder {
+                color: var(--Secondary);
+            }
         }
-    }
-    .btn-message {
-        position: absolute;
-        right: 52px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        border: 1px solid var(--Primary);
-        background-color: var(--Primary);
-        font-size: 24px;
-        color: var(--DarkSurface);
-        cursor: pointer;
-        @include transition3;
-        &:hover {
-            background-color: transparent;
-            color: var(--Primary);
+        .btn-message {
+            position: absolute;
+            right: 52px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--Primary);
+            background-color: var(--Primary);
+            font-size: 24px;
+            color: var(--DarkSurface);
+            cursor: pointer;
+            @include transition3;
+            &:hover {
+                background-color: transparent;
+                color: var(--Primary);
+            }
         }
     }
 }
@@ -373,7 +373,7 @@
     grid-template-columns: repeat(4,1fr);
     gap: 16px;
     .quick-search-item {
-        padding: 15px;
+        padding: 15px 20px;
         border: 1px solid var(--Line);
         border-radius: 12px;
         &:hover {
@@ -529,7 +529,7 @@
         .inner {
             position: relative;
             flex-grow: 1;
-            max-width: 990px;
+            max-width: 982px;
             padding: 0px 15px;
             margin-left: auto;
             margin-right: auto;
@@ -634,7 +634,7 @@
 
 .login-wrap {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     .image {
         position: relative;
         flex-grow: 1;
@@ -660,7 +660,7 @@
         place-content: center;
         width: 29.167%;
         flex-shrink: 0;
-        padding: 60px;
+        padding: 20px 60px;
     }
 }
 

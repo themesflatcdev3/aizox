@@ -1,9 +1,4 @@
 
-@media (min-width: 1440px) {
-    .login-page {
-        height: 100vh;
-    }
-}
 
 @media (min-width: 768px) {
     .po-sticky {
@@ -21,6 +16,10 @@
     }
 }
 @media (max-width: 1440px) {
+    .login-wrap {
+        height: unset;
+        min-height: 100vh;
+    }
     .list-quick-search {
         grid-template-columns: repeat(2,1fr);
     }
@@ -281,6 +280,31 @@
 }
 
 @media (max-width: 767px) {
+    .user-tools-item {
+        padding: 15px;
+        gap: 10px;
+    }
+    .popup-profile .modal-content {
+        flex-direction: column;
+        .icon-close-popup {
+            top: 10px;
+            right: 10px;
+        }
+        .left-menu {
+            width: 100%;
+            padding: 40px 15px 0px;
+        }
+        .right-content {
+            padding: 15px;
+        }
+    }
+    .profile-avatar {
+        gap: 10px;
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
     .login-wrap {
         .content {
             width: 100%;            

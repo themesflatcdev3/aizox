@@ -258,11 +258,11 @@
 
 .faqs {
     display: grid;
-    gap: 12px;
+    gap: 20px;
     .widget-accordion {
-        padding: 20px 32px;
-        border: 1px solid var(--Line);
-        border-radius: 12px;
+        padding: 19px 30px;
+        border: 2px solid var(--Line);
+        border-radius: 16px;
         @include transition3;
         &.active {
             background-color: var(--DarkSurface);
@@ -296,7 +296,7 @@
         padding: 0;
         padding-top: 16px;
         border-top: 1px solid var(--Line);
-        margin-top: 16px;
+        margin-top: 15px;
     }
     &:not(:last-child){
         border-bottom: 1px solid rgba(48, 48, 48, 0.1);
@@ -358,8 +358,6 @@
     }
 }
 
-
-
 .tf-switch-check {
     position: relative;
     width: 68px;
@@ -407,6 +405,9 @@
         color: var(--DarkSurface);
         background-color: var(--Primary);
         border-radius: 99px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
     }
     ul {
         display: grid;
@@ -422,7 +423,7 @@
 .change-log-box {
     display: grid;
     gap: 16px;
-    padding: 24px;
+    padding: 23px;
     border-radius: 16px;
     border: 1px solid var(--Line);
     background-color: var(--DarkSurface);
@@ -430,7 +431,7 @@
         display: flex;
         gap: 16px;
         align-items: center;
-        padding-bottom: 15px;
+        padding-bottom: 13px;
         border-bottom: 1px solid var(--Line);
         .title {
             color: var(--Primary);
@@ -446,6 +447,7 @@
         font-weight: 700;
         font-size: 12px;
         line-height: 20px;
+        letter-spacing: 1px;
     }
     .descs {
         display: grid;
@@ -453,7 +455,7 @@
         .desc-item {
             position: relative;
             color: var(--Secondary);
-            padding-left: 20px;
+            padding-left: 24px;
             &::before {
                 position: absolute;
                 content: '';
@@ -537,6 +539,45 @@
         }
     }
 }
+
+.profile-avatar {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    .add-img {
+        .tf-btn-2 {
+            padding: 10px 23px;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            width: 0;
+            height: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
