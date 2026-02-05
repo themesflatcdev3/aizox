@@ -1456,6 +1456,19 @@ a:hover {
 .tf-switch-check:checked::before {
   left: 36px;
 }
+.tf-switch-check.style-sm {
+  width: 34px;
+  height: 18px;
+}
+.tf-switch-check.style-sm::before {
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+}
+.tf-switch-check.style-sm:checked::before {
+  left: 18px;
+}
 
 .pricing-box {
   padding: 39px;
@@ -5601,8 +5614,9 @@ select option {
 .popup-profile .left-menu {
   width: 33.333%;
   padding: 40px;
+  flex-shrink: 0;
 }
-.popup-profile .left-menu .btn-del {
+.popup-profile .left-menu .btn-bot {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -5610,7 +5624,7 @@ select option {
   padding: 11px 12px;
   color: var(--Error);
 }
-.popup-profile .left-menu .btn-del .icon {
+.popup-profile .left-menu .btn-bot .icon {
   font-size: 24px;
 }
 .popup-profile .widget-menu-tab {

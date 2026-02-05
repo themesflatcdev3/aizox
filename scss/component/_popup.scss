@@ -249,7 +249,8 @@
     .left-menu {
         width: 33.333%;
         padding: 40px;
-        .btn-del {
+        flex-shrink: 0;
+        .btn-bot {
             display: flex;
             align-items: center;
             gap: 8px;
