@@ -413,6 +413,35 @@
     }
   };
 
+  // dark_light
+  var dark_light = function () {
+    var toggle  = $(".button-dark-light");
+    var tflight = $("#logo_header").data("light");
+    var tfdark  = $("#logo_header").data("dark");
+    
+    toggle.on("click", function () {
+      if (localStorage.toggled !== "light-theme") {
+        $("html").toggleClass("light-theme", true);
+        localStorage.toggled = "light-theme";
+        $("#logo_header").attr({ src: tflight });
+      } else {
+        $("html").toggleClass("light-theme", false);
+        localStorage.toggled = "";
+        $("#logo_header").attr({ src: tfdark });
+      }
+    });
+
+    if (localStorage.toggled === "light-theme") {
+      document.documentElement.classList.add('light-theme');
+    }
+    
+    if ($("html").hasClass("light-theme")) {
+      $("#logo_header").attr({ src: tflight });
+    } else {
+      $("#logo_header").attr({ src: tfdark });
+    }
+  }
+
   // Dom Ready
   $(function () {
     selectImages();
@@ -429,6 +458,7 @@
     handleMessage();
     scroll();
     video();
+    dark_light();
   });
 
 })(jQuery);

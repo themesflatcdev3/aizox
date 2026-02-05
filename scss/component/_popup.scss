@@ -57,7 +57,7 @@
     &.user {
         .dropdown-menu.show {
             width: 300px;
-            margin-top: 19px !important;
+            margin-top: 16px !important;
         }
         .user-item {
             display: flex;
@@ -81,7 +81,7 @@
     &.noti {
         .dropdown-menu.show {
             width: 316px;
-            margin-top: 20px !important;
+            margin-top: 16px !important;
         }
         .noti-top {
             display: flex;
@@ -114,9 +114,10 @@
     &.infor {
         .dropdown-menu.show {
             width: 316px;
-            margin-top: 20px !important;
+            margin-top: 16px !important;
         }
     }
+   
 }
 
 .dropdown {
@@ -214,6 +215,11 @@
                 color: var(--Main-Dark);
                 cursor: pointer;
             }
+        }
+    }
+    &.country {
+        .dropdown-menu.show {
+            margin-top: 16px !important;
         }
     }
 }

@@ -42,7 +42,8 @@
         height: 44px;
         border-radius: 50%;
         border: 1px solid var(--Line);
-        background: var(--Surface);
+        background: transparent;
+        box-shadow: none !important;
         i {
             font-size: 24px;
             color: var(--OnSurface);
