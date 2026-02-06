@@ -99,6 +99,14 @@
                             <div class="center-item">
                                 <div class="center-heading">User Tools AI</div>
                                 <ul>
+                                       <li class="menu-item">
+                                        <a href="question-ai.html" class="">
+                                            <div class="icon">
+                                                <i class="icon-question"></i>
+                                            </div>
+                                            <div class="text">Question AI</div>
+                                        </a>
+                                    </li>
                                     <li class="menu-item">
                                         <a href="ai-chat-bot.html" class="">
                                             <div class="icon">
@@ -107,12 +115,28 @@
                                             <div class="text">AI Text Creator</div>
                                         </a>
                                     </li>
-                                    <li class="menu-item active">
-                                        <a href="question-ai.html" class="">
+                                    <li class="menu-item">
+                                        <a href="code-generator.html" class="">
                                             <div class="icon">
-                                                <i class="icon-question"></i>
+                                                <i class="icon-code-solid"></i>
                                             </div>
-                                            <div class="text">Question AI</div>
+                                            <div class="text">Code Generator</div>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item active">
+                                        <a href="website-builder.html" class="">
+                                            <div class="icon">
+                                                <i class="icon-web"></i>
+                                            </div>
+                                            <div class="text">Website Builder</div>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="image-edit.html" class="">
+                                            <div class="icon">
+                                                <i class="icon-image"></i>
+                                            </div>
+                                            <div class="text">AI Image Enhancer</div>
                                         </a>
                                     </li>
                                     <li class="menu-item has-children">
@@ -353,9 +377,9 @@
                         <div class="main-content-inner">
                             <!-- main-content-wrap -->
                             <div class="main-content-wrap flex">
-                                <div class="left question-result-wrap">
+                                <div class="left chat-bot-wrap">
                                     <div class="heading">
-                                        <h4 class="text-capitalize">How can I start planning for retirement?</h4>
+                                        <h4>Website Builder</h4>
                                         <div class="list-icon-function">
                                             <div class="item-icon favourite active">
                                                 <i class="icon-Star-fill"></i>
@@ -369,43 +393,100 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex-grow-1 relative">
-                                        <div class="question-result-content">
-                                            <div class="quick-search">
-                                                <h5 class="mb-16">Quick Search</h5>
-                                                <div class="list-quick-search">
-                                                    <a href="question-ai-results.html" class="quick-search-item">
-                                                        <div class="text-button title">Financial information?</div>
-                                                        <div class="sub">Newtimes</div>
-                                                    </a>
-                                                    <a href="question-ai-results.html" class="quick-search-item">
-                                                        <div class="text-button title">Freedom Financial</div>
-                                                        <div class="sub">Financial.com</div>
-                                                    </a>
-                                                    <a href="question-ai-results.html" class="quick-search-item">
-                                                        <div class="text-button title">Start planning Financial?</div>
-                                                        <div class="sub">Wikipedia</div>
-                                                    </a>
-                                                    <a href="question-ai-results.html" class="quick-search-item">
-                                                        <div class="text-button title">How to lose fat?</div>
-                                                        <div class="sub">byebeoo.vn</div>
-                                                    </a>
-                                                    <a href="question-ai-results.html" class="quick-search-item">
-                                                        <div class="text-button title">Start planning Financial?</div>
-                                                        <div class="sub">Wikipedia</div>
-                                                    </a>
-                                                    <a href="question-ai-results.html" class="quick-search-item">
-                                                        <div class="text-button title">How start gym?</div>
-                                                        <div class="sub">Gymbigforhim.net</div>
-                                                    </a>
+                                    <div class="chat-area-wrap flex-grow-1 relative">
+                                        <div class="content-chat">
+
+                                            <div class="bubble bubble-me">
+                                                <div class="avatar">
+                                                    <img src="images/avatar/user-1.png" alt="">
+                                                </div>
+                                                <div class="content body-text-2">
+                                                    Tell me details about giraffe?
                                                 </div>
                                             </div>
-                                            <div class="answer-wrap">
-                                                <h5 class="mb-16">Answer For You</h5>
-                                                <div class="answer-content">
-                                                    <p class="desc mb-12">
-                                                        To start planning for retirement, it is essential to set clear financial goals and assess your current financial situation. Take into account your desired retirement age, expected living expenses, and potential income sources like Social Security or pensions. Consider consulting with a financial advisor who can help you create a personalized retirement plan, explore retirement savings options such as 401(k)s or IRAs.
-                                                    </p>
+
+                                            <div class="bubble bubble-you">
+                                                <div class="avatar">
+                                                    <img src="images/avatar/aizox.jpg" alt="">
+                                                </div>
+                                                <div class="content">
+                                                    <div class="flex flex-wrap gap16 mb-20">
+                                                     
+                                                    <div class="code-wrapper">
+                                                        <pre><code>
+&lt;!doctype html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
+  &lt;title&gt;Custom Video Player&lt;/title&gt;
+  &lt;style&gt;
+    :root{
+      --bg: rgba(0,0,0,.45);
+      --bg2: rgba(0,0,0,.55);
+      --line: rgba(255,255,255,.18);
+      --text: #fff;
+      --muted: rgba(255,255,255,.75);
+      --thumb: #fff;
+      --accent: #ffffff;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      background:#0b1020;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      padding:24px;
+      color:var(--text);
+    }
+
+    .player{
+      width:min(980px, 100%);
+      aspect-ratio: 16/9;
+      border-radius:14px;
+      overflow:hidden;
+      position:relative;
+      background:#000;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      user-select:none;
+    }
+
+    /* ... */
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="player is-paused" id="player"&gt;
+  &lt;video id="video" preload="metadata" playsinline&gt;
+    &lt;source src="images/video/video-1.mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+
+  &lt;!-- ...  --&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+  const player = document.getElementById("player"); 
+  const video = document.getElementById("video"); 
+  const bigPlayBtn = document.getElementById("bigPlayBtn"); 
+  const clickLayer = document.getElementById("clickLayer"); 
+  const playBtn = document.getElementById("playBtn"); 
+  const playIcon = document.getElementById("playIcon"); 
+  const backBtn = document.getElementById("backBtn"); 
+  const fwdBtn = document.getElementById("fwdBtn");
+  ... 
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+                                                        </code></pre>
+                                                    </div>
+
+                                                    </div>
                                                     <div class="flex gap12 flex-wrap">
                                                         <div class="tf-btn-3">
                                                             <i class="icon opacity-8 icon-Copy"></i>
@@ -422,64 +503,21 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="asks-related-wrap">
-                                                <h5 class="mb-16">Asks Related</h5>
-                                                <div class="faq-asks" id="asks">
-                                                    <div class="widget-accordion">
-                                                        <div class="accordion-title collapsed" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapse1" aria-expanded="true"
-                                                            aria-controls="collapse1" role="button">
-                                                            <span class="text-button">Why is it important to have a budget?</span>
-                                                            <span class="icon icon-arrow-right"></span>
-                                                        </div>
-                                                        <div id="collapse1" class="accordion-collapse collapse"
-                                                            role="region" aria-label="headingOne" data-bs-parent="#asks">
-                                                            <div class="accordion-body ">
-                                                                <p class="">
-                                                                    To start planning for retirement, it is essential to set clear financial goals and assess your current financial situation. Take into account your desired retirement age, expected living expenses, and potential income sources like Social Security or pensions. Consider consulting with a financial advisor who can help you create a personalized retirement plan, explore retirement savings options such as 401(k)s or IRAs.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="widget-accordion">
-                                                        <div class="accordion-title collapsed" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapse2" aria-expanded="true"
-                                                            aria-controls="collapse2" role="button">
-                                                            <span class="text-button">What is personal finance?</span>
-                                                            <span class="icon icon-arrow-right"></span>
-                                                        </div>
-                                                        <div id="collapse2" class="accordion-collapse collapse"
-                                                            role="region" aria-label="headingOne" data-bs-parent="#asks">
-                                                            <div class="accordion-body ">
-                                                                <p class="">
-                                                                    To start planning for retirement, it is essential to set clear financial goals and assess your current financial situation. Take into account your desired retirement age, expected living expenses, and potential income sources like Social Security or pensions. Consider consulting with a financial advisor who can help you create a personalized retirement plan, explore retirement savings options such as 401(k)s or IRAs.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="widget-accordion">
-                                                        <div class="accordion-title collapsed" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapse3" aria-expanded="true"
-                                                            aria-controls="collapse3" role="button">
-                                                            <span class="text-button">What are some common types of investments?</span>
-                                                            <span class="icon icon-arrow-right"></span>
-                                                        </div>
-                                                        <div id="collapse3" class="accordion-collapse collapse"
-                                                            role="region" aria-label="headingOne" data-bs-parent="#asks">
-                                                            <div class="accordion-body ">
-                                                                <p class="">
-                                                                    To start planning for retirement, it is essential to set clear financial goals and assess your current financial situation. Take into account your desired retirement age, expected living expenses, and potential income sources like Social Security or pensions. Consider consulting with a financial advisor who can help you create a personalized retirement plan, explore retirement savings options such as 401(k)s or IRAs.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
+                                            <div class="bubble bubble-me">
+                                                <div class="avatar">
+                                                    <img src="images/avatar/user-1.png" alt="">
+                                                </div>
+                                                <div class="content body-text-2">
+                                                    Fantasy! This is perfect information!
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
-                                    <form class="form-chat">
+                                    <form action="#" class="form-chat">
                                         <input type="text" placeholder="Ask Autox anything" class="val-message" required="">
-                                        <div class="btn-message">
+                                        <div class="btn-message btn-send-mess">
                                             <i class="icon-ArrowUp"></i>
                                         </div>
                                     </form>
@@ -488,124 +526,170 @@
                                     <div class="sidebar-btn-close sidebar-close">
                                         <i class="icon-Export"></i>
                                     </div>
-                                    <h5 class="title">Questions History</h5>
+                                    <h5 class="title">Chat History</h5>
                                     <div class="flex-grow-1 relative">
                                         <div class="sidebar-content">
                                             <div class="chat-history-box d-grid gap12">
-                                                <a href="question-ai-results.html" class="chat-history-item flex-column active item-row">
-                                                    <div class="flex w-full items-center gap4 justify-content-between">
-                                                        <p class="title">Planning your next...</p>
-                                                        <div class="list-icon-function type-small">
-                                                            <div class="item-icon favourite">
-                                                                <i class="icon-Star-fill"></i>
-                                                                <i class="icon-Star"></i>
-                                                            </div>
-                                                            <div class="item-icon export">
-                                                                <i class="icon-Export"></i>
-                                                            </div>
-                                                            <div class="item-icon trash">
-                                                                <i class="icon-Trash"></i>
-                                                            </div>
+                                                <div class="text-button">Today</div>
+                                                <a href="question-ai-results.html" class="chat-history-item active item-row">
+                                                    <p class="title">Chat Bot Definition</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="text text-caption-1">Discover the top travel destinations for your perfect getaway...</div>
                                                 </a>
-                                                <a href="question-ai-results.html" class="chat-history-item flex-column item-row">
-                                                    <div class="flex w-full items-center gap4 justify-content-between">
-                                                        <p class="title">What is Quantum Physics?</p>
-                                                        <div class="list-icon-function type-small">
-                                                            <div class="item-icon favourite active">
-                                                                <i class="icon-Star-fill"></i>
-                                                                <i class="icon-Star"></i>
-                                                            </div>
-                                                            <div class="item-icon export">
-                                                                <i class="icon-Export"></i>
-                                                            </div>
-                                                            <div class="item-icon trash">
-                                                                <i class="icon-Trash"></i>
-                                                            </div>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Digital Marketting</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite active">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="text text-caption-1">Quantum physics is the branch of science that explores the behavior...</div>
                                                 </a>
-                                                <a href="question-ai-results.html" class="chat-history-item flex-column item-row">
-                                                    <div class="flex w-full items-center gap4 justify-content-between">
-                                                        <p class="title">Looking for a new hobby?</p>
-                                                        <div class="list-icon-function type-small">
-                                                            <div class="item-icon favourite">
-                                                                <i class="icon-Star-fill"></i>
-                                                                <i class="icon-Star"></i>
-                                                            </div>
-                                                            <div class="item-icon export">
-                                                                <i class="icon-Export"></i>
-                                                            </div>
-                                                            <div class="item-icon trash">
-                                                                <i class="icon-Trash"></i>
-                                                            </div>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Become UI UX Designer</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="text text-caption-1">Explore the most engaging activities to keep your mind and body active...</div>
                                                 </a>
-                                                <a href="question-ai-results.html" class="chat-history-item flex-column item-row">
-                                                    <div class="flex w-full items-center gap4 justify-content-between">
-                                                        <p class="title">Need to improve your...</p>
-                                                        <div class="list-icon-function type-small">
-                                                            <div class="item-icon favourite">
-                                                                <i class="icon-Star-fill"></i>
-                                                                <i class="icon-Star"></i>
-                                                            </div>
-                                                            <div class="item-icon export">
-                                                                <i class="icon-Export"></i>
-                                                            </div>
-                                                            <div class="item-icon trash">
-                                                                <i class="icon-Trash"></i>
-                                                            </div>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Become Financial Personal</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="text text-caption-1">Learn effective time management techniques that can boost your...</div>
                                                 </a>
-                                                <a href="question-ai-results.html" class="chat-history-item flex-column item-row">
-                                                    <div class="flex w-full items-center gap4 justify-content-between">
-                                                        <p class="title">Thinking about starting a...</p>
-                                                        <div class="list-icon-function type-small">
-                                                            <div class="item-icon favourite active">
-                                                                <i class="icon-Star-fill"></i>
-                                                                <i class="icon-Star"></i>
-                                                            </div>
-                                                            <div class="item-icon export">
-                                                                <i class="icon-Export"></i>
-                                                            </div>
-                                                            <div class="item-icon trash">
-                                                                <i class="icon-Trash"></i>
-                                                            </div>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Learn English</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="text text-caption-1">Explore the essential steps to launching your own successful venture...</div>
                                                 </a>
-                                                <a href="question-ai-results.html" class="chat-history-item flex-column item-row">
-                                                    <div class="flex w-full items-center gap4 justify-content-between">
-                                                        <p class="title">Curious about ancient...</p>
-                                                        <div class="list-icon-function type-small">
-                                                            <div class="item-icon favourite">
-                                                                <i class="icon-Star-fill"></i>
-                                                                <i class="icon-Star"></i>
-                                                            </div>
-                                                            <div class="item-icon export">
-                                                                <i class="icon-Export"></i>
-                                                            </div>
-                                                            <div class="item-icon trash">
-                                                                <i class="icon-Trash"></i>
-                                                            </div>
+                                            </div>
+                                            <div class="chat-history-box d-grid gap12">
+                                                <div class="text-button">Yesterday</div>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Chat Bot Definition</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="text text-caption-1">Dive into the fascinating world of ancient cultures & their lasting...</div>
+                                                </a>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Digital Marketting</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Chat about crypto</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite active">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Become Financial Personal</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="question-ai-results.html" class="chat-history-item item-row">
+                                                    <p class="title">Learn English</p>
+                                                    <div class="list-icon-function type-small">
+                                                        <div class="item-icon favourite">
+                                                            <i class="icon-Star-fill"></i>
+                                                            <i class="icon-Star"></i>
+                                                        </div>
+                                                        <div class="item-icon export">
+                                                            <i class="icon-Export"></i>
+                                                        </div>
+                                                        <div class="item-icon trash">
+                                                            <i class="icon-Trash"></i>
+                                                        </div>
+                                                    </div>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#" class="tf-button w-full">
+                                    <a href="ai-chat-bot.html" class="tf-button w-full">
                                         <i class="icon icon-Plus"></i>
-                                        New Question
+                                        New Chat
                                     </a>
                                 </div>
                             </div>
