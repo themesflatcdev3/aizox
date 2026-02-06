@@ -2120,6 +2120,7 @@ fieldset {
   max-width: 1590px;
   margin: auto;
   border-radius: 16px;
+  overflow: hidden;
   background-color: var(--Surface);
 }
 .layout-wrap.full-width .section-content-right .main-content {
