@@ -1696,6 +1696,7 @@ a:hover {
   border: 1px solid var(--Line);
   background: transparent;
   box-shadow: none !important;
+  cursor: pointer;
 }
 .header-dashboard .header-item i {
   font-size: 24px;
