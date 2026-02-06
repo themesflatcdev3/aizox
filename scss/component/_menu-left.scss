@@ -16,12 +16,6 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        // &::before {
-        //     position: absolute;
-        //     inset: 0;
-        //     content: '';
-        //     background: var(--White);
-        // }
         > .box-logo {
             position: fixed;
             top: 0;
@@ -38,7 +32,6 @@
             width: 100%;
             overflow-y: auto;
             position: relative;
-            // background-color: var(--DarkSurface);
             z-index: 5;
             &::-webkit-scrollbar {
                 width: 0px;
@@ -54,9 +47,6 @@
             gap: 24px;
             width: 100%;
             padding-bottom: 56px;
-            ul {
-                // display: grid;
-            }
         }
         .menu-item {
             position: relative;
@@ -72,7 +62,6 @@
                     place-content: center;
                     svg path {
                         @include transition3;
-                        // stroke: var(--OnSurface);
                     }
                     i {
                         font-size: 24px;
@@ -105,7 +94,6 @@
                     cursor: pointer;
                 }
             }
-            
             &:hover {
                 > a {
                     background-color: var(--Surface);
@@ -124,18 +112,6 @@
                     }
                 }
             }
-            // &:not(.has-children) {
-            //     &.active {
-            //         background-color: var(--Surface-3);
-            //         svg path {
-            //             stroke: var(--Secondary);
-            //         }
-            //         .icon i,
-            //         .text {
-            //             color: var(--Secondary);
-            //         }
-            //     }
-            // }
         }
         .sub-menu {
             display: none;
@@ -215,6 +191,7 @@
         }
     }
 }
+
 .button-show-hide {
     position: relative;
     @include flex(center,center);

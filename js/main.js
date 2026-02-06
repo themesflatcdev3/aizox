@@ -221,55 +221,6 @@
     }
   };
 
-  var multiselect = function () {
-
-    document.querySelectorAll(".multi-select").forEach(ms => {
-      const selectedTagsContainer = ms.querySelector(".selected-tags");
-      const dropdownList = ms.querySelector(".list-dropdown");
-      const dropdownToggle = ms.querySelector(".toggle-dropdown");
-    
-      let selected = [];
-      try {
-        selected = JSON.parse(ms.dataset.default || "[]");
-      } catch (e) {
-        selected = [];
-      }
-    
-      function renderTags() {
-        selectedTagsContainer.innerHTML = "";
-        selected.forEach(color => {
-          const tag = document.createElement("div");
-          tag.className = "tag";
-          tag.innerHTML = `<span class="icon icon-x"></span>${color}`;
-          tag.querySelector("span").onclick = (e) => {
-            e.stopPropagation();
-            selected = selected.filter(c => c !== color);
-            renderTags();
-          };
-          selectedTagsContainer.appendChild(tag);
-        });
-      }
-    
-      dropdownToggle.onclick = () => {
-        dropdownList.style.display = dropdownList.style.display === "flex" ? "none" : "flex";
-      };
-    
-      dropdownList.querySelectorAll("div").forEach(option => {
-        option.onclick = () => {
-          const color = option.textContent.trim();
-          if (!selected.includes(color)) {
-            selected.push(color);
-            renderTags();
-          }
-          dropdownList.style.display = "none";
-        };
-      });
-    
-      renderTags();
-    });
-
-  }
-
   var handleMessage = function () {
     $(".btn-send-mess").on("click", function () {
       var ipMessage = $(".val-message");
@@ -425,7 +376,6 @@
     variant_picker();
     uploadfile();
     writeReview();
-    multiselect();
     handleMessage();
     scroll();
     video();
