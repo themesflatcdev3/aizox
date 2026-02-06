@@ -143,42 +143,6 @@
             max-width: 800px;
         }
     }
-    .form-chat {
-        border-top: 1px solid var(--Line);
-        padding: 25px 40px 26px 40px;
-        input {
-            font-size: 18px;
-            line-height: 28px;
-            padding: 19px 65px 19px 23px;
-            border-radius: 99px;
-            color: var(--OnSurface);
-            &::placeholder {
-                color: var(--Secondary);
-            }
-        }
-        .btn-message {
-            position: absolute;
-            right: 52px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px solid var(--Primary);
-            background-color: var(--Primary);
-            font-size: 24px;
-            color: var(--DarkSurface);
-            cursor: pointer;
-            @include transition3;
-            &:hover {
-                background-color: transparent;
-                color: var(--Primary);
-            }
-        }
-    }
 }
 
 .question-ai-wrap {
@@ -329,6 +293,7 @@
     border-radius: 6px;
     border: 1px solid var(--Line);
     &:hover {
+        color: var(--OnSurface);
         background-color: var(--DarkSurface);
     }
 }
@@ -449,11 +414,11 @@
             background-color: #0E0E1466;
             border-radius: 8px;
             font-size: 24px;
-            color: var(--OnSurface);
+            color: #FFFFFF;
             opacity: 0;
             visibility: hidden;
             &:hover {
-                background-color: var(--DarkSurface);
+                background-color: #0E0E14;
             }
         }
     }
@@ -624,6 +589,15 @@
             top: 40px;
             left: 40px;
         }
+        .infor-mail {
+            color: #fff;
+            a {
+                color: #fff;
+            }
+        }
+        .title {
+            color: #fff;
+        }
     }
 }
 
@@ -654,6 +628,10 @@
             font-weight: 700;
             font-size: 80px;
             line-height: 88px;
+            color: #fff;
+        }
+        .sub {
+            color: #fff;
         }
     }
     .content {

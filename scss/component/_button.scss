@@ -65,6 +65,7 @@
     @include transition3();
     cursor: pointer;
     .icon {
+        color: var(--OnSurface);
         font-size: 24px;
     }
     &:hover {

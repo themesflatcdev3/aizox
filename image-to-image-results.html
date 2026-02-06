@@ -35,6 +35,12 @@
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
 
+    <script>
+        if (localStorage.toggled === "light-theme") {
+            document.documentElement.classList.add("light-theme");
+        }
+    </script>
+
 </head>
 
 <body>
@@ -649,7 +655,7 @@
     <!-- /modal find_size -->
     
     <!-- Javascript -->
-    <!-- <script src="js/default-theme.js"></script> -->
+    <script src="js/dark-light.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>

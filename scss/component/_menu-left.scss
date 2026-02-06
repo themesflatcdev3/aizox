@@ -12,6 +12,7 @@
         flex-direction: column;
         flex-shrink: 0;
         @include transition3;
+        background: var(--DarkSurface);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

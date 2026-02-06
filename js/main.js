@@ -18,7 +18,7 @@
   "use strict";
 
   var selectImages = function () {
-    if ($(".image-select").length > 0) {
+    if ($(".image-select").length) {
       const selectIMG = $(".image-select");
       selectIMG.find("option").each((idx, elem) => {
         const selectOption = $(elem);
@@ -212,7 +212,7 @@
   };
 
   var writeReview = function () {
-    if ($(".write-cancel-review-wrap").length > 0) {
+    if ($(".write-cancel-review-wrap").length) {
         $(".btn-comment-review").click(function () {
             $(this)
                 .closest(".write-cancel-review-wrap")
@@ -298,7 +298,7 @@
       ipMessage.val("");
     });
 
-    if ($(".content-chat").length > 0) {
+    if ($(".content-chat").length) {
       var $chat = $(".content-chat");
       $chat.animate(
         { scrollTop: $chat[0].scrollHeight },
@@ -307,7 +307,7 @@
     }
   };
 
-  if ($(".nice-select").length > 0) {
+  if ($(".nice-select").length) {
     $(".select_js").niceSelect();
   }
   $(document).on("click", ".nice-select", function () {
@@ -329,7 +329,7 @@
   });
 
   var scroll = function () {
-    if ($(".faq-doc-wrap").length > 0) {
+    if ($(".faq-doc-wrap").length) {
       var $container = $(".doc-content");
       var $links = $(".doc-process .item-check");
       var $inner = $container.find(".inner");
@@ -413,35 +413,6 @@
     }
   };
 
-  // dark_light
-  var dark_light = function () {
-    var toggle  = $(".button-dark-light");
-    var tflight = $("#logo_header").data("light");
-    var tfdark  = $("#logo_header").data("dark");
-    
-    toggle.on("click", function () {
-      if (localStorage.toggled !== "light-theme") {
-        $("html").toggleClass("light-theme", true);
-        localStorage.toggled = "light-theme";
-        $("#logo_header").attr({ src: tflight });
-      } else {
-        $("html").toggleClass("light-theme", false);
-        localStorage.toggled = "";
-        $("#logo_header").attr({ src: tfdark });
-      }
-    });
-
-    if (localStorage.toggled === "light-theme") {
-      document.documentElement.classList.add('light-theme');
-    }
-    
-    if ($("html").hasClass("light-theme")) {
-      $("#logo_header").attr({ src: tflight });
-    } else {
-      $("#logo_header").attr({ src: tfdark });
-    }
-  }
-
   // Dom Ready
   $(function () {
     selectImages();
@@ -458,7 +429,6 @@
     handleMessage();
     scroll();
     video();
-    dark_light();
   });
 
 })(jQuery);

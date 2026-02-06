@@ -1126,7 +1126,7 @@ a:hover {
   color: var(--Secondary);
 }
 .wg-social.style-1 .social-item:hover {
-  color: var(--OnSurface);
+  color: #fff;
 }
 
 .counters-box {
@@ -1253,6 +1253,7 @@ a:hover {
 }
 .chat-history-item.active, .chat-history-item:hover {
   background-color: var(--DarkSurface);
+  color: var(--OnSurface);
 }
 .chat-history-item:hover .list-icon-function .item-icon {
   display: flex;
@@ -1410,6 +1411,7 @@ a:hover {
   opacity: 0;
   visibility: hidden;
   object-fit: cover;
+  border-radius: 8px;
 }
 .uploadfile.has-img img {
   opacity: 1;
@@ -1435,7 +1437,7 @@ a:hover {
   width: 68px;
   height: 36px;
   -webkit-appearance: none;
-  background-color: var(--Secondary);
+  background-color: #93929E;
   border-radius: 99px;
   transition: 0.3s;
 }
@@ -1447,7 +1449,7 @@ a:hover {
   position: absolute;
   top: 4px;
   left: 4px;
-  background: var(--OnSurface);
+  background: #fff;
   transition: 0.2s;
 }
 .tf-switch-check:checked {
@@ -3556,6 +3558,7 @@ ul.list-text.type-number {
   cursor: pointer;
 }
 .tf-btn-3 .icon {
+  color: var(--OnSurface);
   font-size: 24px;
 }
 .tf-btn-3:hover {
@@ -3783,6 +3786,46 @@ form.form-setting input {
 }
 form.form-setting input::placeholder {
   font-size: 14px;
+}
+form.form-chat {
+  border-top: 1px solid var(--Line);
+  padding: 25px 40px 26px 40px;
+}
+form.form-chat input {
+  font-size: 18px;
+  line-height: 28px;
+  padding: 19px 65px 19px 23px;
+  border-radius: 99px;
+  color: var(--OnSurface);
+}
+form.form-chat input::placeholder {
+  color: var(--Secondary);
+}
+form.form-chat .btn-message {
+  position: absolute;
+  right: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--Primary);
+  background-color: var(--Primary);
+  font-size: 24px;
+  color: var(--DarkSurface);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+form.form-chat .btn-message:hover {
+  background-color: transparent;
+  color: var(--Primary);
 }
 
 fieldset {
@@ -4110,46 +4153,6 @@ select option {
 .chat-bot-wrap .bubble-you .content {
   max-width: 800px;
 }
-.chat-bot-wrap .form-chat {
-  border-top: 1px solid var(--Line);
-  padding: 25px 40px 26px 40px;
-}
-.chat-bot-wrap .form-chat input {
-  font-size: 18px;
-  line-height: 28px;
-  padding: 19px 65px 19px 23px;
-  border-radius: 99px;
-  color: var(--OnSurface);
-}
-.chat-bot-wrap .form-chat input::placeholder {
-  color: var(--Secondary);
-}
-.chat-bot-wrap .form-chat .btn-message {
-  position: absolute;
-  right: 52px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--Primary);
-  background-color: var(--Primary);
-  font-size: 24px;
-  color: var(--DarkSurface);
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.chat-bot-wrap .form-chat .btn-message:hover {
-  background-color: transparent;
-  color: var(--Primary);
-}
 
 .question-ai-wrap {
   display: flex;
@@ -4302,6 +4305,7 @@ select option {
   border: 1px solid var(--Line);
 }
 .ask-old-item:hover {
+  color: var(--OnSurface);
   background-color: var(--DarkSurface);
 }
 
@@ -4423,12 +4427,12 @@ select option {
   background-color: rgba(14, 14, 20, 0.4);
   border-radius: 8px;
   font-size: 24px;
-  color: var(--OnSurface);
+  color: #FFFFFF;
   opacity: 0;
   visibility: hidden;
 }
 .image-item .image-action a:hover {
-  background-color: var(--DarkSurface);
+  background-color: #0E0E14;
 }
 .image-item:hover .image-action a {
   opacity: 1;
@@ -4600,6 +4604,15 @@ select option {
   top: 40px;
   left: 40px;
 }
+.contact-content .image .infor-mail {
+  color: #fff;
+}
+.contact-content .image .infor-mail a {
+  color: #fff;
+}
+.contact-content .image .title {
+  color: #fff;
+}
 
 .form-contact {
   display: grid;
@@ -4630,6 +4643,10 @@ select option {
   font-weight: 700;
   font-size: 80px;
   line-height: 88px;
+  color: #fff;
+}
+.login-wrap .image .sub {
+  color: #fff;
 }
 .login-wrap .content {
   place-content: center;
@@ -4905,6 +4922,7 @@ select option {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  background: var(--DarkSurface);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6438,7 +6456,7 @@ select option {
 }
 
 .noUi-connect {
-  background-color: var(--Line);
+  background-color: #2A2839;
 }
 
 .noUi-horizontal .noUi-handle,
@@ -6611,6 +6629,7 @@ select option {
 .light-theme form textarea,
 .light-theme form input {
   color: var(--OnSurface);
+  border: 1px solid rgba(48, 48, 48, 0.1019607843);
 }
 .light-theme form textarea::placeholder,
 .light-theme form input::placeholder {
@@ -6672,20 +6691,8 @@ select option {
 .light-theme .block-tracking {
   background: #fff;
 }
-.light-theme .section-menu-left .menu-item:not(.has-children).active a .icon svg path {
+.light-theme .section-menu-left .menu-item a svg path {
   stroke: var(--OnSurface);
-}
-.light-theme .section-menu-left .menu-item.has-children.active > a {
-  background: rgba(48, 48, 48, 0.5);
-}
-.light-theme .section-menu-left .menu-item.has-children::after {
-  color: var(--Surface) !important;
-}
-.light-theme .section-menu-left .menu-item.has-children .sub-menu a .text {
-  color: var(--Surface);
-}
-.light-theme .section-menu-left .menu-item.has-children .sub-menu a::before {
-  border-color: var(--Surface);
 }
 .light-theme .section-menu-left .bot svg path {
   stroke: var(--OnSurface);
@@ -6720,26 +6727,10 @@ select option {
   background-color: transparent !important;
   border: 0;
 }
-.light-theme .tf-button {
-  border: 0;
-}
-.light-theme .tf-button.style-1 {
-  border: 1px solid var(--Secondary);
-}
-.light-theme .tf-button.style-1:hover {
-  background-color: var(--Secondary);
-  color: #fff;
-}
-.light-theme .tf-button.style-3 {
-  border: 1px solid var(--Secondary);
-}
-.light-theme .tf-button.style-3:hover {
-  background-color: var(--Secondary);
-  color: #fff;
-}
-.light-theme .tf-button.style-5:hover {
-  color: #fff;
-  background-color: var(--Secondary);
+.light-theme .tf-button:hover {
+  background-color: var(--OnSurface);
+  border-color: var(--OnSurface);
+  color: var(--DarkSurface);
 }
 .light-theme .tf-product-info-view svg path {
   fill: #fff;

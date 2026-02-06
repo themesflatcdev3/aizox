@@ -63,7 +63,7 @@
         .social-item {
             color: var(--Secondary);
             &:hover {
-                color: var(--OnSurface);
+                color: #fff;
             }
         }
     }
@@ -187,6 +187,7 @@
     &.active,
     &:hover {
         background-color: var(--DarkSurface);
+        color: var(--OnSurface);
     }
     &:hover {
         .list-icon-function {
@@ -333,6 +334,7 @@
         opacity: 0;
         visibility: hidden;
         object-fit: cover;
+        border-radius: 8px;
     }
     &.has-img {
         img {
@@ -363,7 +365,7 @@
     width: 68px;
     height: 36px;
     -webkit-appearance: none;
-    background-color: var(--Secondary);
+    background-color: #93929E;
     border-radius: 99px;
     transition: 0.3s;
     &::before {
@@ -374,7 +376,7 @@
         position: absolute;
         top: 4px;
         left: 4px;
-        background: var(--OnSurface);
+        background: #fff;
         transition: 0.2s;
     }
     &:checked {

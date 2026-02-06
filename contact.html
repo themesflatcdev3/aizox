@@ -35,6 +35,12 @@
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
 
+    <script>
+        if (localStorage.toggled === "light-theme") {
+            document.documentElement.classList.add("light-theme");
+        }
+    </script>
+
 </head>
 
 <body>
@@ -358,11 +364,11 @@
                                         <div class="image">
                                             <img src="images/section/contact.jpg" alt="">
                                             <div class="infor">
-                                                <h5 class="mb-4">Contact Information</h5>
+                                                <h5 class="mb-4 title">Contact Information</h5>
                                                 <div class="text-Secondary mb-28">Say something to start a live chat!</div>
-                                                <div class="flex gap12 items-center mb-20">
+                                                <div class="flex gap12 items-center mb-20 infor-mail">
                                                     <i class="icon icon-EnvelopeSimple fs24"></i>
-                                                    <a href="mailto:hi.avitex@gmail.com" class="body-text-2">hi.avitex@gmail.com</a>
+                                                    <a href="mailto:hi.avitex@gmail.com" class="body-text-2 link">hi.avitex@gmail.com</a>
                                                 </div>
                                                 <div class="wg-social style-1 flex gap20 items-center">
                                                     <a class="social-item" href="https://www.facebook.com/"><i class="icon-FacebookLogo"></i></a>
@@ -597,7 +603,7 @@
     <!-- /modal find_size -->
     
     <!-- Javascript -->
-    <!-- <script src="js/default-theme.js"></script> -->
+    <script src="js/dark-light.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>

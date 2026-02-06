@@ -200,6 +200,7 @@
         textarea,
         input {
             color: var(--OnSurface);
+            border: 1px solid rgba(48, 48, 48, 0.1019607843);
             &::placeholder {
                 color: var(--OnSurface);
             }
@@ -299,53 +300,9 @@
     .section-menu-left {
         .menu-item {
             a {
-                
-                // .icon {
-                //     i {
-                //         color: var(--Surface) ;
-                //     }
+                svg path {
+                    stroke: var(--OnSurface);
 
-                //     svg {
-                //         path {
-                //             fill: var(--Surface);
-                //         }
-                //     }
-                // }
-
-                // .text {
-                //     color: var(--Surface) ;
-                // }
-            }
-            &:not(.has-children).active {
-                a {
-                
-                    .icon {
-                        svg {
-                            path {
-                                stroke: var(--OnSurface);
-                            }
-                        }
-                    }
-                }
-            }
-            &.has-children {
-                &.active {
-                    >a {
-                        background: rgba(48, 48, 48, 0.5);
-                    }
-                }
-                &::after {
-                    color: var(--Surface) !important;
-                }
-                .sub-menu {
-                    a {
-                        .text {
-                            color: var(--Surface);
-                        }
-                        &::before {
-                            border-color: var(--Surface);
-                        }
-                    }
                 }
             }
         }
@@ -410,33 +367,11 @@
     }
 
     .tf-button {
-        border: 0;
-
-
-        &.style-1 {
-            border: 1px solid var(--Secondary);
-
-            &:hover {
-                background-color: var(--Secondary);
-                color: #fff;
-            }
+        &:hover {
+            background-color: var(--OnSurface);
+            border-color: var(--OnSurface);
+            color: var(--DarkSurface);
         }
-
-        &.style-3 {
-            border: 1px solid var(--Secondary);
-            &:hover {
-                background-color: var(--Secondary);
-                color: #fff;
-            }
-        }
-
-        &.style-5 {
-            &:hover {
-                color: #fff;
-                background-color: var(--Secondary);
-            }
-        }
-
     }
 
     .tf-product-info-view {

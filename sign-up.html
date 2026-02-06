@@ -35,6 +35,12 @@
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
 
+    <script>
+        if (localStorage.toggled === "light-theme") {
+            document.documentElement.classList.add("light-theme");
+        }
+    </script>
+
 </head>
 
 <body>
@@ -126,7 +132,7 @@
                     <img src="images/section/login.jpg" alt="image">
                     <div class="text text-center">
                         <div class="title mb-20">Chat AI Autox</div>
-                        <div class="body-text-2">Our practice is Designing Complete Environments exceptional buildings <br> communities and place in special situations</div>
+                        <div class="body-text-2 sub">Our practice is Designing Complete Environments exceptional buildings <br> communities and place in special situations</div>
                     </div>
                 </div>
             </div>
@@ -136,7 +142,7 @@
     <!-- /#wrapper -->
     
     <!-- Javascript -->
-    <!-- <script src="js/default-theme.js"></script> -->
+    <script src="js/dark-light.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
