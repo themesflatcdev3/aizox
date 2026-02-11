@@ -44,9 +44,9 @@
         }
         .center {
             display: grid;
-            gap: 24px;
+            gap: 18px;
             width: 100%;
-            padding-bottom: 56px;
+            padding-bottom: 4px;
         }
         .menu-item {
             position: relative;
@@ -54,11 +54,12 @@
                 position: relative;
                 @include flex(center,start);
                 gap: 12px;
-                padding: 12px 16px;
+                padding: 10px 12px;
                 border-radius: 12px;
                 .icon {
+                    display: flex;
                     width: 24px;
-                    height: 28px;
+                    height: 24px;
                     place-content: center;
                     svg path {
                         @include transition3;
@@ -161,7 +162,7 @@
             font-weight: 700;
             letter-spacing: 1.1px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
         a {
             position: relative;
@@ -173,9 +174,9 @@
         }
         .bot {
             display: grid;
-            gap: 16px;
+            gap: 12px;
             border-top: 1px solid var(--Line);
-            padding-top: 16px;
+            padding-top: 12px;
         }
     }
     &.full-width {

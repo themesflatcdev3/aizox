@@ -4,13 +4,13 @@
     justify-content: center;
     gap: 6px;
     padding: 10px 27px;
-    color: var(--DarkSurface);
+    color: #0E0E14;
     font-weight: 700;
     font-size: 16px;
     line-height: 26px;
-    border: 1px solid var(--Primary);
+    border: 1px solid #31F8A3;
     border-radius: 8px;
-    background-color: var(--Primary);
+    background-color: #31F8A3;
     @include transition3();
     cursor: pointer;
     .icon {
@@ -18,7 +18,7 @@
     }
     &:hover {
         background-color: transparent;
-        color: var(--Primary);
+        color: #31F8A3;
     }
     i {
         font-size: 20px;

@@ -1752,13 +1752,13 @@ a:hover {
   justify-content: center;
   gap: 6px;
   padding: 10px 27px;
-  color: var(--DarkSurface);
+  color: #0E0E14;
   font-weight: 700;
   font-size: 16px;
   line-height: 26px;
-  border: 1px solid var(--Primary);
+  border: 1px solid #31F8A3;
   border-radius: 8px;
-  background-color: var(--Primary);
+  background-color: #31F8A3;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -1771,7 +1771,7 @@ a:hover {
 }
 .tf-button:hover {
   background-color: transparent;
-  color: var(--Primary);
+  color: #31F8A3;
 }
 .tf-button i {
   font-size: 20px;
@@ -1846,7 +1846,7 @@ form {
   position: relative;
 }
 form.form-search .input-search {
-  padding: 7px 11px 7px 43px;
+  padding: 3px 11px 3px 37px;
 }
 form.form-search .button-submit {
   position: absolute;
@@ -1858,7 +1858,7 @@ form.form-search .button-submit button {
   padding: 0;
   border: 0;
   display: flex;
-  font-size: 24px;
+  font-size: 20px;
   color: var(--Secondary);
 }
 form .password .show-pass {
@@ -2007,10 +2007,10 @@ form.form-chat .btn-message {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--Primary);
-  background-color: var(--Primary);
+  border: 1px solid #31F8A3;
+  background-color: #31F8A3;
   font-size: 24px;
-  color: var(--DarkSurface);
+  color: #0E0E14;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -2020,7 +2020,7 @@ form.form-chat .btn-message {
 }
 form.form-chat .btn-message:hover {
   background-color: transparent;
-  color: var(--Primary);
+  color: #31F8A3;
 }
 
 fieldset {
@@ -2457,7 +2457,24 @@ fieldset {
 }
 
 .text-to-image-wrap {
+  position: absolute;
+  inset: 0;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+.text-to-image-wrap::-webkit-scrollbar {
+  width: 8px;
+}
+.text-to-image-wrap::-webkit-scrollbar-thumb {
+  background: var(--Secondary);
+  border-radius: 0px;
+}
+.text-to-image-wrap::-webkit-scrollbar-track {
+  background: var(--Line);
 }
 .text-to-image-wrap .grid-image {
   margin-bottom: 26px;
@@ -2554,7 +2571,7 @@ fieldset {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.list-choose .choose-item.active {
+.list-choose .choose-item:hover, .list-choose .choose-item.active {
   color: var(--DarkSurface);
   background-color: var(--Primary);
   border-color: var(--Primary);
@@ -2814,9 +2831,9 @@ fieldset {
 }
 .layout-wrap .section-menu-left .center {
   display: grid;
-  gap: 24px;
+  gap: 18px;
   width: 100%;
-  padding-bottom: 56px;
+  padding-bottom: 4px;
 }
 .layout-wrap .section-menu-left .menu-item {
   position: relative;
@@ -2831,12 +2848,13 @@ fieldset {
   align-items: center;
   justify-content: start;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 10px 12px;
   border-radius: 12px;
 }
 .layout-wrap .section-menu-left .menu-item a .icon {
+  display: flex;
   width: 24px;
-  height: 28px;
+  height: 24px;
   place-content: center;
 }
 .layout-wrap .section-menu-left .menu-item a .icon svg path {
@@ -2942,7 +2960,7 @@ fieldset {
   font-weight: 700;
   letter-spacing: 1.1px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 .layout-wrap .section-menu-left a {
   position: relative;
@@ -2954,9 +2972,9 @@ fieldset {
 }
 .layout-wrap .section-menu-left .bot {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   border-top: 1px solid var(--Line);
-  padding-top: 16px;
+  padding-top: 12px;
 }
 .layout-wrap.full-width .section-menu-left {
   left: -300px;
@@ -3716,6 +3734,9 @@ fieldset {
   }
 }
 @media (max-width: 1200px) {
+  .text-to-image-wrap {
+    position: unset;
+  }
   .login-wrap .content {
     padding-left: 15px;
     padding-right: 15px;

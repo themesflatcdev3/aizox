@@ -222,7 +222,7 @@
   };
 
   var handleMessage = function () {
-    $(".btn-send-mess").on("click", function () {
+    function sendMessage() {
       var ipMessage = $(".val-message");
       var messValue = ipMessage.val().trim();
       var $chat = $(".content-chat");
@@ -247,7 +247,17 @@
       );
     
       ipMessage.val("");
+    }
+    
+    $(".btn-send-mess").on("click", sendMessage);
+    
+    $(".val-message").on("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        sendMessage();
+      }
     });
+    
 
     if ($(".content-chat").length) {
       var $chat = $(".content-chat");

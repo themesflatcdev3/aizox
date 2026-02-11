@@ -2,7 +2,7 @@ form {
     position: relative;
     &.form-search {
         .input-search {
-            padding: 7px 11px 7px 43px;
+            padding: 3px 11px 3px 37px;
         }
         .button-submit {
             position: absolute;
@@ -13,7 +13,7 @@ form {
                 padding: 0;
                 border: 0;
                 display: flex;
-                font-size: 24px;
+                font-size: 20px;
                 color: var(--Secondary);
             }
         }
@@ -137,15 +137,15 @@ form {
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            border: 1px solid var(--Primary);
-            background-color: var(--Primary);
+            border: 1px solid #31F8A3;
+            background-color: #31F8A3;
             font-size: 24px;
-            color: var(--DarkSurface);
+            color: #0E0E14;
             cursor: pointer;
             @include transition3;
             &:hover {
                 background-color: transparent;
-                color: var(--Primary);
+                color: #31F8A3;
             }
         }
     }

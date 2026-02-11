@@ -18,6 +18,9 @@
 }
 
 @media (max-width: 1200px) {
+    .text-to-image-wrap {
+        position: unset;
+    }
     .login-wrap {
         .content {
             padding-left: 15px;
