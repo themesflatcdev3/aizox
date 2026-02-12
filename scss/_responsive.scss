@@ -1,6 +1,10 @@
 
 
 @media (max-width: 1440px) {
+    .user-tools-item {
+        padding: 11px 15px;
+        gap: 10px;
+    }
     .login-wrap {
         height: unset;
         min-height: 100vh;
@@ -149,10 +153,6 @@
 @media (max-width: 767px) {
     .header-dashboard .header-grid {
         gap: 16px;
-    }
-    .user-tools-item {
-        padding: 15px;
-        gap: 10px;
     }
     .popup-profile .modal-content {
         flex-direction: column;
