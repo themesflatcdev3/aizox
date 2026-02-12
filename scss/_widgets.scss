@@ -72,6 +72,12 @@
     padding: 40px;
     .user-tools-item {
         max-width: 640px;
+        .image {
+            .icon {
+                font-size: 40px;
+                color: var(--Primary);
+            }
+        }
     }
 }
 
@@ -128,13 +134,17 @@
         color: var(--Secondary);
         display: flex;
         cursor: pointer;
+        @include transition3;
+        &:hover {
+            color: var(--Primary);
+        }
     }
     .favourite {
         .icon-Star {
             display: none;
         }
         &.active {
-            color: var(--Yellow);
+            color: var(--Yellow) !important;
             .icon-Star {
                 display: block;
             }
@@ -528,7 +538,7 @@
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background-color: var(--Line);
+        background-color: #2A2839;
         .icon {
             margin-left: 8px;
         }
@@ -561,24 +571,21 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.code-wrapper{
+    overflow: hidden;
+    max-width: 100%;
+    pre {
+        background     : #0E0E14 !important;
+        border-radius: 12px;
+        &::-webkit-scrollbar {
+            height: 8px; 
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--Secondary);
+            border-radius: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: var(--Line);
+        }
+    }
+}

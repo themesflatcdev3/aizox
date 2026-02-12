@@ -5,6 +5,10 @@
     --DarkSurface: #FFFFFF;
     --Line: #3030301a;
 
+    .noUi-connect {
+        background-color: #504f5b;
+    }
+
     .banner-box {
         a,
         .title {
@@ -19,7 +23,7 @@
     .button-dark-light {
         i {
             &::before {
-                content: '\e90b';
+                content: '\e90d';
             }
         }
     }

@@ -142,6 +142,7 @@
     .bubble-you {
         .content {
             max-width: 800px;
+            width: calc(100% - 60px - 0px);
         }
     }
 }
@@ -274,6 +275,7 @@
             .desc {
                 color: var(--Secondary);
             }
+            &.active,
             &:hover {
                 background-color: var(--Surface);
             }

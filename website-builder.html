@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="css/animation.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/prism-tomorrow.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 
@@ -78,18 +79,7 @@
                                     <li class="menu-item">
                                         <a href="index.html" class="">
                                             <div class="icon">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_8008_16325)">
-                                                    <path d="M20.25 20.2504V10.8322C20.25 10.7277 20.2281 10.6243 20.1858 10.5288C20.1435 10.4332 20.0817 10.3475 20.0044 10.2772L12.5044 3.19535C12.3663 3.06966 12.1863 3 11.9995 3C11.8128 3 11.6328 3.06966 11.4947 3.19535L3.99469 10.2772C3.91751 10.3476 3.85587 10.4333 3.81374 10.5289C3.7716 10.6245 3.74989 10.7278 3.75 10.8322V20.2504" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <path d="M1.5 20.25H22.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    <path d="M14.25 20.25V15C14.25 14.8011 14.171 14.6103 14.0303 14.4697C13.8897 14.329 13.6989 14.25 13.5 14.25H10.5C10.3011 14.25 10.1103 14.329 9.96967 14.4697C9.82902 14.6103 9.75 14.8011 9.75 15V20.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </g>
-                                                    <defs>
-                                                    <clipPath id="clip0_8008_16325">
-                                                    <rect width="24" height="24" fill="white"/>
-                                                    </clipPath>
-                                                    </defs>
-                                                </svg>
+                                                <i class="icon-house-line"></i>
                                             </div>
                                             <div class="text">Overview</div>
                                         </a>
@@ -126,7 +116,7 @@
                                     <li class="menu-item active">
                                         <a href="website-builder.html" class="">
                                             <div class="icon">
-                                                <i class="icon-web"></i>
+                                                <i class="icon-notebook"></i>
                                             </div>
                                             <div class="text">Website Builder</div>
                                         </a>
@@ -340,7 +330,7 @@
                                             </div>
                                             <div class="text flex flex-column">
                                                 <div class="name h6">John Smith</div>
-                                                <div class="sub body-text">hi.avitex@gmail.com</div>
+                                                <div class="sub body-text">themesflat@gmail.com</div>
                                             </div>
                                         </div>
                                         <div>
@@ -401,7 +391,7 @@
                                                     <img src="images/avatar/user-1.png" alt="">
                                                 </div>
                                                 <div class="content body-text-2">
-                                                    Tell me details about giraffe?
+                                                    Create a slider full demo with html css js
                                                 </div>
                                             </div>
 
@@ -413,77 +403,81 @@
                                                     <div class="flex flex-wrap gap16 mb-20">
                                                      
                                                     <div class="code-wrapper">
-                                                        <pre><code>
-&lt;!doctype html&gt;
-&lt;html lang="vi"&gt;
+                                                        <div class="code-label"> This is FULL DEMO: SWIPER</div>
+                                                        <pre><code class="language-markup">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
-  &lt;meta charset="UTF-8" /&gt;
-  &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
-  &lt;title&gt;Custom Video Player&lt;/title&gt;
-  &lt;style&gt;
-    :root{
-      --bg: rgba(0,0,0,.45);
-      --bg2: rgba(0,0,0,.55);
-      --line: rgba(255,255,255,.18);
-      --text: #fff;
-      --muted: rgba(255,255,255,.75);
-      --thumb: #fff;
-      --accent: #ffffff;
-    }
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Swiper&lt;/title&gt;
 
+&lt;!-- Swiper CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/&gt;
+
+&lt;style&gt;
     body{
-      margin:0;
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      background:#0b1020;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      padding:24px;
-      color:var(--text);
+        margin:0;
+        background:#0b1020;
+        font-family:system-ui;
+        padding:40px;
+        color:#fff;
     }
 
-    .player{
-      width:min(980px, 100%);
-      aspect-ratio: 16/9;
-      border-radius:14px;
-      overflow:hidden;
-      position:relative;
-      background:#000;
-      box-shadow: 0 20px 60px rgba(0,0,0,.45);
-      user-select:none;
+    .swiper{
+        width:800px;
+        max-width:100%;
+        height:300px;
+        border-radius:14px;
+        overflow:hidden;
     }
 
-    /* ... */
-
+    .swiper-slide{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:28px;
+        font-weight:bold;
+        background:#1e293b;
+        color:#fff;
+    }
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;div class="player is-paused" id="player"&gt;
-  &lt;video id="video" preload="metadata" playsinline&gt;
-    &lt;source src="images/video/video-1.mp4" type="video/mp4"&gt;
-  &lt;/video&gt;
+    &lt;div class="swiper mySwiper"&gt;
 
-  &lt;!-- ...  --&gt;
+        &lt;div class="swiper-wrapper"&gt;
+            &lt;div class="swiper-slide"&gt;Slide 1&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
+            &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+        &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+        &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+    &lt;/div&gt;
 
-&lt;/div&gt;
+&lt;!-- Swiper JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"&gt;&lt;/script&gt;
 
 &lt;script&gt;
-  const player = document.getElementById("player"); 
-  const video = document.getElementById("video"); 
-  const bigPlayBtn = document.getElementById("bigPlayBtn"); 
-  const clickLayer = document.getElementById("clickLayer"); 
-  const playBtn = document.getElementById("playBtn"); 
-  const playIcon = document.getElementById("playIcon"); 
-  const backBtn = document.getElementById("backBtn"); 
-  const fwdBtn = document.getElementById("fwdBtn");
-  ... 
+    const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+    });
 &lt;/script&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;
-
                                                         </code></pre>
+                                                            
                                                     </div>
 
                                                     </div>
@@ -880,7 +874,7 @@
                                     </span>
                                 </fieldset>
                                 <button type="submit" class="tf-button w-full">
-                                    Delete Accont
+                                    Delete Account
                                 </button>
                             </form>
                         </div>
@@ -896,9 +890,9 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
-    <!-- <script src="js/zoom.js"></script> -->
-    <!-- <script src="js/switcher.js"></script> -->
-    <!-- <script defer src="js/theme-settings.js"></script> -->
+
+    <script src="js/prism.min.js"></script>
+    <script src="js/prism-markup.min.js"></script>
     <script src="js/main.js"></script>
 
 </body>

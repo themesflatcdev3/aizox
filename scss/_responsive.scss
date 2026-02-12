@@ -79,8 +79,8 @@
             .main-content {
                 padding-left: 0 !important;
                 .main-content-inner {
-                    padding-left: 30px;
-                    padding-right: 30px;
+                    padding-left: 20px;
+                    padding-right: 20px;
                 }
             }
             .header-dashboard {
@@ -141,6 +141,9 @@
 }
 
 @media (max-width: 767px) {
+    .header-dashboard .header-grid {
+        gap: 16px;
+    }
     .user-tools-item {
         padding: 15px;
         gap: 10px;

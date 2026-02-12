@@ -251,3 +251,11 @@
     }
  
 }
+
+.modal {
+    z-index: 1060;
+    cursor: url(../images/cursor-close.svg), auto;
+    .modal-content {
+        cursor: default;
+    }
+}

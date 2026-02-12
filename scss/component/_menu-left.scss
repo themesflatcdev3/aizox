@@ -33,6 +33,9 @@
             overflow-y: auto;
             position: relative;
             z-index: 5;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             &::-webkit-scrollbar {
                 width: 0px;
                 height: 0;
@@ -43,10 +46,12 @@
             }
         }
         .center {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: 18px;
             width: 100%;
             padding-bottom: 4px;
+            flex-grow: 1;
         }
         .menu-item {
             position: relative;
@@ -80,12 +85,18 @@
                     @include transition3;
                 }
             }
+            >a {
+                &:hover,
+                &.active {
+                    background-color: var(--Surface);
+                }
+            }
             &.has-children {
                 position: relative;
                 transition-delay: 0.3s;
                 &::after {
                     position: absolute;
-                    content: '\e903';
+                    content: '\e905';
                     top: 12px;
                     right: 16px;
                     color: var(--OnSurface);
@@ -95,14 +106,11 @@
                     cursor: pointer;
                 }
             }
-            &:hover {
-                > a {
-                    background-color: var(--Surface);
-                }
-            }
             &.active {
-                > a {
-                    background-color: var(--Surface);
+                &:not(.has-children) {
+                    > a {
+                        background-color: var(--Surface);
+                    }
                 }
                 > .sub-menu {
                     display: block;
@@ -129,6 +137,7 @@
                     font-size: 14px;
                     line-height: 24px;
                 }
+                &:hover,
                 &.active {
                     a {
                         &::before {
@@ -151,6 +160,7 @@
                     height: 8px;
                     border: 1px solid var(--Secondary);
                     border-radius: 50%;
+                    @include transition3;
                 }
              
             }

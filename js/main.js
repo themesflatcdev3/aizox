@@ -1,16 +1,18 @@
 /**
-    * selectImages
+    *  selectImages
     * menuleft
     * tabs
     * collapse_menu
     * showpass
     * select_colors_theme
     * icon_function
-    * box_search
     * variant_picker
     * uploadfile
     * writeReview
-    * multiselect
+    * handleMessage
+    * scroll
+    * video
+    * switchPrice
 */
 
 ; (function ($) {
@@ -89,9 +91,29 @@
     $(".sidebar-close").on("click", function () {
       $('.sidebar-right').toggleClass('active');
     })
-    $(".btn-dropdown-cate").on("click", function () {
-      $('.form-question-ai').toggleClass('active');
-    })
+
+    $(document).on("click", function () {
+      $(".form-question-ai").removeClass("active");
+    });
+    $(".btn-dropdown-cate").on("click", function (e) {
+      e.stopPropagation();
+      $(this).closest(".form-question-ai").toggleClass("active");
+    });
+    $(".dropdown-cate .dropdown-cate-item").on("click", function (e) {
+      e.preventDefault();
+    
+      var $this = $(this);
+      var selectedText = $this.find(".title").text();
+      var $form = $this.closest(".form-question-ai");
+    
+      $form.find(".dropdown-cate .dropdown-cate-item").removeClass("active");
+    
+      $this.addClass("active");
+    
+      $form.find(".btn-dropdown-cate .text").text(selectedText);
+    
+      $form.removeClass("active");
+    });
   }
 
   var showpass = function() {
@@ -258,14 +280,6 @@
       }
     });
     
-
-    if ($(".content-chat").length) {
-      var $chat = $(".content-chat");
-      $chat.animate(
-        { scrollTop: $chat[0].scrollHeight },
-        300
-      );
-    }
   };
 
   if ($(".nice-select").length) {
@@ -374,6 +388,31 @@
     }
   };
 
+  var switchPrice = () => {
+    function formatUSD(n) {
+      return '$' + Number(n).toLocaleString('en-US');
+    }
+
+    function updatePrices(isYearly) {
+      $('.price-number').each(function () {
+        const $p = $(this);
+        const val = isYearly ? $p.data('year') : $p.data('month');
+        $p.text(formatUSD(val));
+        $p.next('.price-per').text(isYearly ? '/ year' : '/ month');
+      });
+    }
+
+    $('#pricingSwitch').on('change', function () {
+      updatePrices(this.checked);
+    });
+
+    if ($('#pricingSwitch').is(':checked')) {
+      updatePrices(true);
+    } else {
+      updatePrices(false);
+    }
+  };
+
   // Dom Ready
   $(function () {
     selectImages();
@@ -389,6 +428,7 @@
     handleMessage();
     scroll();
     video();
+    switchPrice();
   });
 
 })(jQuery);
