@@ -57,6 +57,9 @@
                 .box-logo {
                     left: 0;
                 }
+                .bot {
+                    left: 0;
+                }
             }
             .section-content-right {
                 .header-dashboard {
@@ -72,6 +75,9 @@
             .box-logo {
                 background-color: var(--DarkSurface);
                 border-color: #fff;
+                left: -100%;
+            }
+            .bot {
                 left: -100%;
             }
         }

@@ -1662,6 +1662,7 @@ a:hover {
 }
 .code-wrapper pre::-webkit-scrollbar-track {
   background: var(--Line);
+  border-radius: 8px;
 }
 
 .header-dashboard {
@@ -2806,6 +2807,7 @@ fieldset {
   left: 0;
   z-index: 20;
   padding-top: 81px;
+  padding-bottom: 143px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2847,7 +2849,7 @@ fieldset {
   z-index: 6;
 }
 .layout-wrap .section-menu-left .section-menu-left-wrap {
-  padding: 0 24px 30px;
+  padding: 0 24px;
   width: 100%;
   overflow-y: auto;
   position: relative;
@@ -2867,9 +2869,9 @@ fieldset {
 .layout-wrap .section-menu-left .center {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 17px;
+  padding-bottom: 6px;
   width: 100%;
-  padding-bottom: 4px;
   flex-grow: 1;
 }
 .layout-wrap .section-menu-left .menu-item {
@@ -3013,10 +3015,20 @@ fieldset {
   object-fit: cover;
 }
 .layout-wrap .section-menu-left .bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: grid;
   gap: 12px;
+  width: 300px;
+  padding: 12px 24px 30px;
+  background-color: var(--DarkSurface);
   border-top: 1px solid var(--Line);
-  padding-top: 12px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .layout-wrap.full-width .section-menu-left {
   left: -300px;
@@ -3024,6 +3036,9 @@ fieldset {
 .layout-wrap.full-width .section-menu-left > .box-logo {
   left: -300px;
   border-bottom: 0;
+}
+.layout-wrap.full-width .bot {
+  left: -300px;
 }
 .layout-wrap.full-width .button-show-hide {
   display: -webkit-box;
@@ -3823,6 +3838,9 @@ fieldset {
   .layout-wrap.full-width .section-menu-left .box-logo {
     left: 0;
   }
+  .layout-wrap.full-width .section-menu-left .bot {
+    left: 0;
+  }
   .layout-wrap.full-width .section-content-right .header-dashboard {
     padding-left: 15px !important;
   }
@@ -3835,6 +3853,9 @@ fieldset {
   .layout-wrap .section-menu-left .box-logo {
     background-color: var(--DarkSurface);
     border-color: #fff;
+    left: -100%;
+  }
+  .layout-wrap .section-menu-left .bot {
     left: -100%;
   }
   .layout-wrap .section-content-right .main-content {

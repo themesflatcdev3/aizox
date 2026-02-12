@@ -586,6 +586,7 @@
         }
         &::-webkit-scrollbar-track {
             background: var(--Line);
+            border-radius: 8px;
         }
     }
 }

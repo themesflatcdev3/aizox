@@ -8,6 +8,7 @@
         left: 0;
         z-index: 20;
         padding-top: 81px;
+        padding-bottom: 143px;
         @include flex(center,start);
         flex-direction: column;
         flex-shrink: 0;
@@ -28,7 +29,7 @@
             z-index: 6;
         }
         .section-menu-left-wrap {
-            padding: 0 24px 30px;
+            padding: 0 24px;
             width: 100%;
             overflow-y: auto;
             position: relative;
@@ -48,9 +49,9 @@
         .center {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 17px;
+            padding-bottom: 6px;
             width: 100%;
-            padding-bottom: 4px;
             flex-grow: 1;
         }
         .menu-item {
@@ -183,10 +184,16 @@
             }
         }
         .bot {
+            position: fixed;
+            bottom: 0;
+            left: 0;
             display: grid;
             gap: 12px;
+            width: 300px;
+            padding: 12px 24px 30px;
+            background-color: var(--DarkSurface);
             border-top: 1px solid var(--Line);
-            padding-top: 12px;
+            @include transition3;
         }
     }
     &.full-width {
@@ -196,6 +203,9 @@
                 left: -300px;
                 border-bottom: 0;
             }
+        }
+        .bot {
+            left: -300px;
         }
         .button-show-hide {
             @include d-flex();
