@@ -1650,6 +1650,7 @@ a:hover {
   max-width: 100%;
 }
 .code-wrapper pre {
+  margin: 0 !important;
   background: #0E0E14 !important;
   border-radius: 12px;
 }
@@ -2266,9 +2267,9 @@ fieldset {
 .chat-bot-wrap .bubble-me .content {
   border-radius: 12px 12px 0 12px;
 }
-.chat-bot-wrap .bubble-you .content {
+.chat-bot-wrap .bubble-you .bubble-rep {
   max-width: 800px;
-  width: calc(100% - 60px - 0px);
+  flex-grow: 1;
 }
 
 .question-ai-wrap {

@@ -140,9 +140,9 @@
         }
     }
     .bubble-you {
-        .content {
+        .bubble-rep {
             max-width: 800px;
-            width: calc(100% - 60px - 0px);
+            flex-grow: 1;
         }
     }
 }

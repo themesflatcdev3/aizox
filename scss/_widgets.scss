@@ -575,7 +575,8 @@
     overflow: hidden;
     max-width: 100%;
     pre {
-        background     : #0E0E14 !important;
+        margin: 0 !important;
+        background : #0E0E14 !important;
         border-radius: 12px;
         &::-webkit-scrollbar {
             height: 8px; 
