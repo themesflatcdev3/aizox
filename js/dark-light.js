@@ -1,3 +1,8 @@
+// light-theme
+if (localStorage.toggled === "light-theme") {
+  document.documentElement.classList.add("light-theme");
+}
+
 // elements
 var toggle = document.querySelector(".button-dark-light");
 var htmlEl = document.documentElement;

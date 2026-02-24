@@ -2,7 +2,7 @@
   "use strict";
 
   var rangestructural = function () {
-    if ($("#slider-structural").length > 0) {
+    if ($("#slider-structural").length) {
       var dirSlider = document.getElementById("slider-structural");
       noUiSlider.create(dirSlider, {
         start: 7,
@@ -20,7 +20,7 @@
   };
 
   var rangeweight = function () {
-    if ($("#slider-weight").length > 0) {
+    if ($("#slider-weight").length) {
       var dirSlider = document.getElementById("slider-weight");
       noUiSlider.create(dirSlider, {
         start: 6.8,
@@ -37,7 +37,7 @@
     }
   };
   var consistency = function () {
-    if ($("#consistency").length > 0) {
+    if ($("#consistency").length) {
       var dirSlider = document.getElementById("consistency");
       noUiSlider.create(dirSlider, {
         start: 1.4,

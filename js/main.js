@@ -147,12 +147,12 @@
           $(this).parents(".item-row").remove();
         }
       });
-      $(".list-icon-function .favourite").click(function () {
+      $(".list-icon-function .favourite").on("click", function () {
           $(this).toggleClass("active");
       });
     }
 
-    $(".item-check").click(function () {
+    $(".item-check").on("click", function () {
       $(this).closest(".list-checks").find(".active").removeClass("active");
       $(this).addClass("active");
     });
@@ -235,11 +235,11 @@
 
   var writeReview = function () {
     if ($(".write-cancel-review-wrap").length) {
-        $(".btn-comment-review").click(function () {
-            $(this)
-                .closest(".write-cancel-review-wrap")
-                .toggleClass("write-review");
-        });
+      $(".btn-comment-review").on("click", function () {
+        $(this)
+          .closest(".write-cancel-review-wrap")
+          .toggleClass("write-review");
+      });
     }
   };
 
